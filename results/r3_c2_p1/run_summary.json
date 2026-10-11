@@ -1,0 +1,2059 @@
+{
+  "run": "r3_c2_p1",
+  "purpose": "C2 with P1: 100 critical-thinking variants, may answer UNANSWERABLE (Day 4)",
+  "task": "gsmplus_critical_seed100_p1",
+  "model": "openai/gpt-oss-20b",
+  "gen_kwargs": {
+    "reasoning_effort": "low"
+  },
+  "n_questions": 100,
+  "sample_ids_sha256": "8c19b33f7cbe156508dda9377b18b6d9d711026be50edff3c4d9aa57e4968d1e",
+  "finished_at": "2026-10-07T00:31:17+00:00",
+  "wall_seconds": 242.1,
+  "lm_eval_version": "0.4.13",
+  "metrics": {
+    "name": "gsmplus_critical_seed100_p1",
+    "sample_len": 100,
+    "answered_number,none": 0.14,
+    "answered_number_stderr,none": 0.0348735088019777,
+    "abstained,none": 0.86,
+    "abstained_stderr,none": 0.0348735088019777,
+    "no_final_answer,none": 0.0,
+    "no_final_answer_stderr,none": 0.0
+  },
+  "extraction_rate": {},
+  "finish_reasons": {
+    "stop": 100
+  },
+  "unusable_answers": {
+    "count": 0,
+    "rate": 0.0,
+    "note": "finish_reason != stop: truncated, empty or no response"
+  },
+  "tokens_per_question": {
+    "prompt": {
+      "mean": 179.3,
+      "median": 175.0,
+      "max": 277,
+      "sum": 17932
+    },
+    "completion": {
+      "mean": 123.4,
+      "median": 95.0,
+      "max": 632,
+      "sum": 12340
+    },
+    "reasoning (inside completion)": {
+      "mean": 65.8,
+      "median": 52.0,
+      "max": 471,
+      "sum": 6579
+    }
+  },
+  "answers_from_cache": 10,
+  "http_status_counts_this_run": {
+    "200": 90
+  },
+  "per_question": [
+    {
+      "doc_id": 0,
+      "orig_idx": 5,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 167,
+      "completion_tokens": 79,
+      "reasoning_tokens": 66,
+      "from_cache": true
+    },
+    {
+      "doc_id": 1,
+      "orig_idx": 18,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 147,
+      "completion_tokens": 29,
+      "reasoning_tokens": 16,
+      "from_cache": true
+    },
+    {
+      "doc_id": 2,
+      "orig_idx": 23,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 148,
+      "completion_tokens": 31,
+      "reasoning_tokens": 18,
+      "from_cache": true
+    },
+    {
+      "doc_id": 3,
+      "orig_idx": 50,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 156,
+      "completion_tokens": 27,
+      "reasoning_tokens": 14,
+      "from_cache": true
+    },
+    {
+      "doc_id": 4,
+      "orig_idx": 51,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 174,
+      "completion_tokens": 40,
+      "reasoning_tokens": 27,
+      "from_cache": true
+    },
+    {
+      "doc_id": 5,
+      "orig_idx": 67,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 165,
+      "completion_tokens": 118,
+      "reasoning_tokens": 50,
+      "from_cache": true
+    },
+    {
+      "doc_id": 6,
+      "orig_idx": 100,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 202,
+      "completion_tokens": 182,
+      "reasoning_tokens": 85,
+      "from_cache": true
+    },
+    {
+      "doc_id": 7,
+      "orig_idx": 156,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 191,
+      "completion_tokens": 150,
+      "reasoning_tokens": 81,
+      "from_cache": true
+    },
+    {
+      "doc_id": 8,
+      "orig_idx": 165,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 223,
+      "completion_tokens": 68,
+      "reasoning_tokens": 55,
+      "from_cache": true
+    },
+    {
+      "doc_id": 9,
+      "orig_idx": 183,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 247,
+      "completion_tokens": 211,
+      "reasoning_tokens": 156,
+      "from_cache": true
+    },
+    {
+      "doc_id": 10,
+      "orig_idx": 185,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 152,
+      "completion_tokens": 33,
+      "reasoning_tokens": 20,
+      "from_cache": false
+    },
+    {
+      "doc_id": 11,
+      "orig_idx": 200,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 163,
+      "completion_tokens": 29,
+      "reasoning_tokens": 16,
+      "from_cache": false
+    },
+    {
+      "doc_id": 12,
+      "orig_idx": 210,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 219,
+      "completion_tokens": 632,
+      "reasoning_tokens": 354,
+      "from_cache": false
+    },
+    {
+      "doc_id": 13,
+      "orig_idx": 226,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 186,
+      "completion_tokens": 149,
+      "reasoning_tokens": 104,
+      "from_cache": false
+    },
+    {
+      "doc_id": 14,
+      "orig_idx": 238,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 153,
+      "completion_tokens": 169,
+      "reasoning_tokens": 58,
+      "from_cache": false
+    },
+    {
+      "doc_id": 15,
+      "orig_idx": 243,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 179,
+      "completion_tokens": 53,
+      "reasoning_tokens": 40,
+      "from_cache": false
+    },
+    {
+      "doc_id": 16,
+      "orig_idx": 249,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 186,
+      "completion_tokens": 125,
+      "reasoning_tokens": 42,
+      "from_cache": false
+    },
+    {
+      "doc_id": 17,
+      "orig_idx": 264,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 155,
+      "completion_tokens": 99,
+      "reasoning_tokens": 61,
+      "from_cache": false
+    },
+    {
+      "doc_id": 18,
+      "orig_idx": 288,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 161,
+      "completion_tokens": 27,
+      "reasoning_tokens": 14,
+      "from_cache": false
+    },
+    {
+      "doc_id": 19,
+      "orig_idx": 291,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 175,
+      "completion_tokens": 250,
+      "reasoning_tokens": 132,
+      "from_cache": false
+    },
+    {
+      "doc_id": 20,
+      "orig_idx": 306,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 172,
+      "completion_tokens": 223,
+      "reasoning_tokens": 75,
+      "from_cache": false
+    },
+    {
+      "doc_id": 21,
+      "orig_idx": 414,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 159,
+      "completion_tokens": 34,
+      "reasoning_tokens": 21,
+      "from_cache": false
+    },
+    {
+      "doc_id": 22,
+      "orig_idx": 430,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 186,
+      "completion_tokens": 222,
+      "reasoning_tokens": 66,
+      "from_cache": false
+    },
+    {
+      "doc_id": 23,
+      "orig_idx": 457,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 198,
+      "completion_tokens": 189,
+      "reasoning_tokens": 130,
+      "from_cache": false
+    },
+    {
+      "doc_id": 24,
+      "orig_idx": 459,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 246,
+      "completion_tokens": 145,
+      "reasoning_tokens": 67,
+      "from_cache": false
+    },
+    {
+      "doc_id": 25,
+      "orig_idx": 468,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 175,
+      "completion_tokens": 106,
+      "reasoning_tokens": 93,
+      "from_cache": false
+    },
+    {
+      "doc_id": 26,
+      "orig_idx": 491,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 161,
+      "completion_tokens": 39,
+      "reasoning_tokens": 26,
+      "from_cache": false
+    },
+    {
+      "doc_id": 27,
+      "orig_idx": 514,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 142,
+      "completion_tokens": 40,
+      "reasoning_tokens": 27,
+      "from_cache": false
+    },
+    {
+      "doc_id": 28,
+      "orig_idx": 515,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 164,
+      "completion_tokens": 73,
+      "reasoning_tokens": 40,
+      "from_cache": false
+    },
+    {
+      "doc_id": 29,
+      "orig_idx": 529,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 163,
+      "completion_tokens": 64,
+      "reasoning_tokens": 18,
+      "from_cache": false
+    },
+    {
+      "doc_id": 30,
+      "orig_idx": 550,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 213,
+      "completion_tokens": 28,
+      "reasoning_tokens": 15,
+      "from_cache": false
+    },
+    {
+      "doc_id": 31,
+      "orig_idx": 588,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 189,
+      "completion_tokens": 79,
+      "reasoning_tokens": 66,
+      "from_cache": false
+    },
+    {
+      "doc_id": 32,
+      "orig_idx": 589,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 179,
+      "completion_tokens": 46,
+      "reasoning_tokens": 33,
+      "from_cache": false
+    },
+    {
+      "doc_id": 33,
+      "orig_idx": 598,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 162,
+      "completion_tokens": 126,
+      "reasoning_tokens": 86,
+      "from_cache": false
+    },
+    {
+      "doc_id": 34,
+      "orig_idx": 602,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 153,
+      "completion_tokens": 128,
+      "reasoning_tokens": 52,
+      "from_cache": false
+    },
+    {
+      "doc_id": 35,
+      "orig_idx": 630,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 186,
+      "completion_tokens": 49,
+      "reasoning_tokens": 36,
+      "from_cache": false
+    },
+    {
+      "doc_id": 36,
+      "orig_idx": 632,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 184,
+      "completion_tokens": 92,
+      "reasoning_tokens": 44,
+      "from_cache": false
+    },
+    {
+      "doc_id": 37,
+      "orig_idx": 643,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 177,
+      "completion_tokens": 66,
+      "reasoning_tokens": 14,
+      "from_cache": false
+    },
+    {
+      "doc_id": 38,
+      "orig_idx": 654,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 174,
+      "completion_tokens": 104,
+      "reasoning_tokens": 60,
+      "from_cache": false
+    },
+    {
+      "doc_id": 39,
+      "orig_idx": 697,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 204,
+      "completion_tokens": 354,
+      "reasoning_tokens": 188,
+      "from_cache": false
+    },
+    {
+      "doc_id": 40,
+      "orig_idx": 712,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 167,
+      "completion_tokens": 177,
+      "reasoning_tokens": 97,
+      "from_cache": false
+    },
+    {
+      "doc_id": 41,
+      "orig_idx": 730,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 162,
+      "completion_tokens": 80,
+      "reasoning_tokens": 37,
+      "from_cache": false
+    },
+    {
+      "doc_id": 42,
+      "orig_idx": 744,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 197,
+      "completion_tokens": 76,
+      "reasoning_tokens": 25,
+      "from_cache": false
+    },
+    {
+      "doc_id": 43,
+      "orig_idx": 755,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 170,
+      "completion_tokens": 154,
+      "reasoning_tokens": 44,
+      "from_cache": false
+    },
+    {
+      "doc_id": 44,
+      "orig_idx": 770,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 220,
+      "completion_tokens": 112,
+      "reasoning_tokens": 99,
+      "from_cache": false
+    },
+    {
+      "doc_id": 45,
+      "orig_idx": 813,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 200,
+      "completion_tokens": 216,
+      "reasoning_tokens": 96,
+      "from_cache": false
+    },
+    {
+      "doc_id": 46,
+      "orig_idx": 815,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 192,
+      "completion_tokens": 342,
+      "reasoning_tokens": 127,
+      "from_cache": false
+    },
+    {
+      "doc_id": 47,
+      "orig_idx": 816,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 152,
+      "completion_tokens": 121,
+      "reasoning_tokens": 63,
+      "from_cache": false
+    },
+    {
+      "doc_id": 48,
+      "orig_idx": 823,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 202,
+      "completion_tokens": 49,
+      "reasoning_tokens": 36,
+      "from_cache": false
+    },
+    {
+      "doc_id": 49,
+      "orig_idx": 860,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 158,
+      "completion_tokens": 27,
+      "reasoning_tokens": 14,
+      "from_cache": false
+    },
+    {
+      "doc_id": 50,
+      "orig_idx": 861,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 183,
+      "completion_tokens": 293,
+      "reasoning_tokens": 119,
+      "from_cache": false
+    },
+    {
+      "doc_id": 51,
+      "orig_idx": 864,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 182,
+      "completion_tokens": 109,
+      "reasoning_tokens": 35,
+      "from_cache": false
+    },
+    {
+      "doc_id": 52,
+      "orig_idx": 871,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 176,
+      "completion_tokens": 166,
+      "reasoning_tokens": 153,
+      "from_cache": false
+    },
+    {
+      "doc_id": 53,
+      "orig_idx": 879,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 169,
+      "completion_tokens": 68,
+      "reasoning_tokens": 55,
+      "from_cache": false
+    },
+    {
+      "doc_id": 54,
+      "orig_idx": 886,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 185,
+      "completion_tokens": 237,
+      "reasoning_tokens": 87,
+      "from_cache": false
+    },
+    {
+      "doc_id": 55,
+      "orig_idx": 903,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 165,
+      "completion_tokens": 97,
+      "reasoning_tokens": 44,
+      "from_cache": false
+    },
+    {
+      "doc_id": 56,
+      "orig_idx": 920,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 189,
+      "completion_tokens": 107,
+      "reasoning_tokens": 65,
+      "from_cache": false
+    },
+    {
+      "doc_id": 57,
+      "orig_idx": 935,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 200,
+      "completion_tokens": 114,
+      "reasoning_tokens": 101,
+      "from_cache": false
+    },
+    {
+      "doc_id": 58,
+      "orig_idx": 936,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 221,
+      "completion_tokens": 262,
+      "reasoning_tokens": 152,
+      "from_cache": false
+    },
+    {
+      "doc_id": 59,
+      "orig_idx": 938,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 176,
+      "completion_tokens": 38,
+      "reasoning_tokens": 25,
+      "from_cache": false
+    },
+    {
+      "doc_id": 60,
+      "orig_idx": 944,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 178,
+      "completion_tokens": 46,
+      "reasoning_tokens": 33,
+      "from_cache": false
+    },
+    {
+      "doc_id": 61,
+      "orig_idx": 961,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 192,
+      "completion_tokens": 126,
+      "reasoning_tokens": 113,
+      "from_cache": false
+    },
+    {
+      "doc_id": 62,
+      "orig_idx": 962,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 163,
+      "completion_tokens": 84,
+      "reasoning_tokens": 30,
+      "from_cache": false
+    },
+    {
+      "doc_id": 63,
+      "orig_idx": 980,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 177,
+      "completion_tokens": 209,
+      "reasoning_tokens": 73,
+      "from_cache": false
+    },
+    {
+      "doc_id": 64,
+      "orig_idx": 981,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 164,
+      "completion_tokens": 79,
+      "reasoning_tokens": 22,
+      "from_cache": false
+    },
+    {
+      "doc_id": 65,
+      "orig_idx": 987,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 184,
+      "completion_tokens": 29,
+      "reasoning_tokens": 16,
+      "from_cache": false
+    },
+    {
+      "doc_id": 66,
+      "orig_idx": 1004,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 183,
+      "completion_tokens": 367,
+      "reasoning_tokens": 135,
+      "from_cache": false
+    },
+    {
+      "doc_id": 67,
+      "orig_idx": 1005,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 182,
+      "completion_tokens": 90,
+      "reasoning_tokens": 41,
+      "from_cache": false
+    },
+    {
+      "doc_id": 68,
+      "orig_idx": 1020,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 162,
+      "completion_tokens": 25,
+      "reasoning_tokens": 12,
+      "from_cache": false
+    },
+    {
+      "doc_id": 69,
+      "orig_idx": 1027,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 183,
+      "completion_tokens": 38,
+      "reasoning_tokens": 25,
+      "from_cache": false
+    },
+    {
+      "doc_id": 70,
+      "orig_idx": 1029,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 243,
+      "completion_tokens": 177,
+      "reasoning_tokens": 106,
+      "from_cache": false
+    },
+    {
+      "doc_id": 71,
+      "orig_idx": 1037,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 176,
+      "completion_tokens": 67,
+      "reasoning_tokens": 54,
+      "from_cache": false
+    },
+    {
+      "doc_id": 72,
+      "orig_idx": 1048,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 160,
+      "completion_tokens": 27,
+      "reasoning_tokens": 14,
+      "from_cache": false
+    },
+    {
+      "doc_id": 73,
+      "orig_idx": 1050,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 163,
+      "completion_tokens": 44,
+      "reasoning_tokens": 31,
+      "from_cache": false
+    },
+    {
+      "doc_id": 74,
+      "orig_idx": 1051,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 147,
+      "completion_tokens": 157,
+      "reasoning_tokens": 50,
+      "from_cache": false
+    },
+    {
+      "doc_id": 75,
+      "orig_idx": 1060,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 170,
+      "completion_tokens": 148,
+      "reasoning_tokens": 56,
+      "from_cache": false
+    },
+    {
+      "doc_id": 76,
+      "orig_idx": 1071,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 201,
+      "completion_tokens": 75,
+      "reasoning_tokens": 40,
+      "from_cache": false
+    },
+    {
+      "doc_id": 77,
+      "orig_idx": 1074,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 161,
+      "completion_tokens": 241,
+      "reasoning_tokens": 85,
+      "from_cache": false
+    },
+    {
+      "doc_id": 78,
+      "orig_idx": 1101,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 153,
+      "completion_tokens": 45,
+      "reasoning_tokens": 32,
+      "from_cache": false
+    },
+    {
+      "doc_id": 79,
+      "orig_idx": 1117,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 148,
+      "completion_tokens": 132,
+      "reasoning_tokens": 56,
+      "from_cache": false
+    },
+    {
+      "doc_id": 80,
+      "orig_idx": 1121,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 158,
+      "completion_tokens": 81,
+      "reasoning_tokens": 68,
+      "from_cache": false
+    },
+    {
+      "doc_id": 81,
+      "orig_idx": 1122,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 216,
+      "completion_tokens": 350,
+      "reasoning_tokens": 124,
+      "from_cache": false
+    },
+    {
+      "doc_id": 82,
+      "orig_idx": 1135,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 0,
+            "answered_number": 1,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 167,
+      "completion_tokens": 112,
+      "reasoning_tokens": 38,
+      "from_cache": false
+    },
+    {
+      "doc_id": 83,
+      "orig_idx": 1139,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 183,
+      "completion_tokens": 34,
+      "reasoning_tokens": 21,
+      "from_cache": false
+    },
+    {
+      "doc_id": 84,
+      "orig_idx": 1141,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 162,
+      "completion_tokens": 180,
+      "reasoning_tokens": 76,
+      "from_cache": false
+    },
+    {
+      "doc_id": 85,
+      "orig_idx": 1146,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 180,
+      "completion_tokens": 82,
+      "reasoning_tokens": 69,
+      "from_cache": false
+    },
+    {
+      "doc_id": 86,
+      "orig_idx": 1155,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 149,
+      "completion_tokens": 41,
+      "reasoning_tokens": 28,
+      "from_cache": false
+    },
+    {
+      "doc_id": 87,
+      "orig_idx": 1172,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 204,
+      "completion_tokens": 84,
+      "reasoning_tokens": 30,
+      "from_cache": false
+    },
+    {
+      "doc_id": 88,
+      "orig_idx": 1178,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 150,
+      "completion_tokens": 150,
+      "reasoning_tokens": 44,
+      "from_cache": false
+    },
+    {
+      "doc_id": 89,
+      "orig_idx": 1182,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 155,
+      "completion_tokens": 117,
+      "reasoning_tokens": 63,
+      "from_cache": false
+    },
+    {
+      "doc_id": 90,
+      "orig_idx": 1199,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 277,
+      "completion_tokens": 28,
+      "reasoning_tokens": 15,
+      "from_cache": false
+    },
+    {
+      "doc_id": 91,
+      "orig_idx": 1201,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 167,
+      "completion_tokens": 260,
+      "reasoning_tokens": 104,
+      "from_cache": false
+    },
+    {
+      "doc_id": 92,
+      "orig_idx": 1223,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 172,
+      "completion_tokens": 62,
+      "reasoning_tokens": 49,
+      "from_cache": false
+    },
+    {
+      "doc_id": 93,
+      "orig_idx": 1229,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 164,
+      "completion_tokens": 93,
+      "reasoning_tokens": 41,
+      "from_cache": false
+    },
+    {
+      "doc_id": 94,
+      "orig_idx": 1230,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 213,
+      "completion_tokens": 65,
+      "reasoning_tokens": 52,
+      "from_cache": false
+    },
+    {
+      "doc_id": 95,
+      "orig_idx": 1257,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 168,
+      "completion_tokens": 49,
+      "reasoning_tokens": 36,
+      "from_cache": false
+    },
+    {
+      "doc_id": 96,
+      "orig_idx": 1272,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 195,
+      "completion_tokens": 118,
+      "reasoning_tokens": 71,
+      "from_cache": false
+    },
+    {
+      "doc_id": 97,
+      "orig_idx": 1274,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 167,
+      "completion_tokens": 92,
+      "reasoning_tokens": 58,
+      "from_cache": false
+    },
+    {
+      "doc_id": 98,
+      "orig_idx": 1283,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 157,
+      "completion_tokens": 99,
+      "reasoning_tokens": 57,
+      "from_cache": false
+    },
+    {
+      "doc_id": 99,
+      "orig_idx": 1306,
+      "gold": "None",
+      "filters": {
+        "none": {
+          "extracted": null,
+          "scores": {
+            "abstained": 1,
+            "answered_number": 0,
+            "no_final_answer": 0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 236,
+      "completion_tokens": 484,
+      "reasoning_tokens": 471,
+      "from_cache": false
+    }
+  ]
+}

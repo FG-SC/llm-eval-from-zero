@@ -1,0 +1,19 @@
+# secrets
+.env
+
+# environments and caches
+.venv/
+.hf/
+cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# the author's local working files
+recon/
+
+# outputs of optional live runs (the notebook's RUN_LIVE / LIVE_DEMO switches and the plain CLI example)
+results/live_demo/
+results/plain_cli/
+

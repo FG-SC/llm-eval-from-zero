@@ -1,0 +1,40 @@
+{
+  "description": "Post-hoc reading of the 9 answers the grader marked wrong in run r1_c0 (GSM8K, zero-shot). Done after the run; it does not change the official, pre-registered score.",
+  "run": "r1_c0",
+  "date": "2026-10-06",
+  "readers": "4 AI readers: Claude (the AI assistant that ran the experiment) and 3 more Claude sessions that did not see each other's verdicts. Their instructions and raw verdicts are in data/key_audit_readers.json. Not a human audit: read the questions yourself. Each item is also compared with GSM8K-Platinum (data/platinum_check.json), where people reviewed the questions its models got wrong.",
+  "key_change_notes": {
+    "description": "Post-hoc reading, by the assistant, of the answer keys GSM8K-Platinum changed among our 100 questions (compare GSM8K's and Platinum's worked solutions).",
+    "items": [
+      {"idx": 823, "note": "GSM8K's solution adds Julie's first-game score (10) instead of Sasha's (14). Sasha scored 14 + 4 = 18, the model's answer."},
+      {"idx": 288, "note": "A truck that carries 2,000 pounds holds only 26 whole 75-pound flagstones, so 3 trucks carry 78 of the 80: 4 trucks are needed. The clear case."},
+      {"idx": 1071, "note": "Platinum counts Kayla herself as a guest (46 people instead of 45). A reasonable reading, but one you can argue with."}
+    ]
+  },
+  "verdicts": {
+    "model_error": "the question is clear, the answer key is right, the model's answer is wrong",
+    "key_error": "the official answer key is wrong",
+    "ambiguous_question": "the question can reasonably be read two ways; the key and the model chose different readings",
+    "grader_format": "the model's number is right, but written in a form the exact-match grader rejects"
+  },
+  "items": [
+    {"idx": 306, "verdict": "ambiguous_question", "votes": {"ambiguous_question": 4},
+     "reason": "'half of what is left is sold equally in the afternoon and evening': half of the 20 loaves split in two (5, the model) or all 20 split in two (10, the key)."},
+    {"idx": 515, "verdict": "ambiguous_question", "votes": {"ambiguous_question": 4},
+     "reason": "'8 packs of 5 canvas bags for $4 each': $4 per pack (profit 288, the model) or $4 per bag (profit 160, the key)."},
+    {"idx": 815, "verdict": "model_error", "votes": {"model_error": 4},
+     "reason": "The model set up the equations correctly, then counted one ingredient twice and answered 10/3 instead of 4."},
+    {"idx": 823, "verdict": "key_error", "votes": {"key_error": 4},
+     "reason": "Sasha scores 14 in game 1 and 10 - 6 = 4 in game 2, so 18 in total (the model's answer). The official solution adds Julie's 10 instead of Sasha's 14 and writes 14."},
+    {"idx": 962, "verdict": "ambiguous_question", "votes": {"ambiguous_question": 4},
+     "reason": "'How much does travel cost?' comes right after 'The tickets for travel cost...': the tickets (600, the model) or tickets plus supplies (1000, the key)."},
+    {"idx": 1048, "verdict": "ambiguous_question", "votes": {"ambiguous_question": 4},
+     "reason": "'depreciates at a constant rate of 21% per year': compounding (9,861, the model, the usual textbook reading) or 21% of the original price each year (7,400, the key)."},
+    {"idx": 1074, "verdict": "ambiguous_question", "votes": {"ambiguous_question": 3, "model_error": 1},
+     "reason": "'within an hour' may cover both puzzles (750, the key) or only the second one (500, the model). The weakest case: the key's reading is the more natural one."},
+    {"idx": 1122, "verdict": "model_error", "votes": {"model_error": 4},
+     "reason": "The model treated the 20 toys still missing as the fifth worker's output (2 per hour) instead of 380 - 200 = 180 toys in 10 hours (18 per hour)."},
+    {"idx": 1223, "verdict": "grader_format", "votes": {"grader_format": 4},
+     "reason": "The model wrote '#### 8.00' and the key is 8. Exact match compares text, so both rules reject it."}
+  ]
+}

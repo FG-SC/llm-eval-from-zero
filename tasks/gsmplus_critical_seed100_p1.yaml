@@ -1,0 +1,33 @@
+# C2 with P1: same questions as gsmplus_critical_seed100_p0, but the prompt allows
+# "#### UNANSWERABLE" when the problem lacks the information to compute an answer.
+task: gsmplus_critical_seed100_p1
+dataset_path: qintongli/GSM-Plus
+dataset_kwargs:
+  revision: 3b708db57b96a16e8e3368ed2956990c0809440e
+output_type: generate_until
+training_split: null
+fewshot_split: null
+test_split: test
+process_docs: !function gsmplus.process_docs_critical
+doc_to_text: !function utils.doc_to_text_p1
+doc_to_target: "{{answer}}"
+process_results: !function gsmplus.process_results_critical
+num_fewshot: 0
+generation_kwargs:
+  until: []
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 2048
+repeats: 1
+metric_list:
+  - metric: answered_number
+    aggregation: mean
+    higher_is_better: false
+  - metric: abstained
+    aggregation: mean
+    higher_is_better: true
+  - metric: no_final_answer
+    aggregation: mean
+    higher_is_better: false
+metadata:
+  version: 1.0

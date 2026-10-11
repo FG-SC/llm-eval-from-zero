@@ -1,0 +1,25 @@
+# Exact versions used to produce the saved results (Python 3.12).
+
+# used directly by this project
+lm_eval[api]==0.4.13
+datasets==5.1.0
+requests==2.34.2
+python-dotenv==1.2.4
+PyYAML==6.0.3
+pandas==2.3.3
+scipy==1.18.1
+statsmodels==0.15.0
+plotly==7.1.0
+kaleido==1.4.0
+jupyter==1.1.1
+jupytext==1.19.6
+pytest==9.1.1
+
+# installed anyway by the packages above; pinned so everyone gets the same versions
+openai==3.24.0
+tenacity==9.1.4
+tiktoken==0.14.0
+numpy==2.5.3
+pyarrow==24.0.0
+regex==2025.11.3
+scikit-learn==1.9.1

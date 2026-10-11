@@ -1,0 +1,922 @@
+{
+  "source": {
+    "path": "madrylab/gsm8k-platinum",
+    "name": "main",
+    "split": "test",
+    "revision": "e762492455a1cf7967de89f05b6bef72fc713b66"
+  },
+  "gsm8k": {
+    "path": "openai/gsm8k",
+    "name": "main",
+    "split": "test",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "n_rows": 1319
+  },
+  "n_sample": 100,
+  "licence": "questions: GSM8K (MIT); Platinum annotations (status, revised keys): CC BY-SA 4.0",
+  "summary": {
+    "n": 100,
+    "removed_from_platinum": 7,
+    "key_changed": 3,
+    "question_reworded": 0,
+    "status_counts": {
+      "verified": 4,
+      "consensus": 86,
+      "removed": 7,
+      "revised": 3
+    }
+  },
+  "full_test_set": {
+    "n": 1319,
+    "removed_from_platinum": 110,
+    "key_changed": 10,
+    "question_reworded": 0,
+    "status_counts": {
+      "consensus": 1100,
+      "verified": 99,
+      "removed": 110,
+      "revised": 10
+    }
+  },
+  "items": [
+    {
+      "idx": 5,
+      "in_platinum": true,
+      "status": "verified",
+      "question_reworded": false,
+      "gsm8k_key": "64",
+      "platinum_key": "64",
+      "key_changed": false
+    },
+    {
+      "idx": 18,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "7",
+      "platinum_key": "7",
+      "key_changed": false
+    },
+    {
+      "idx": 23,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "8",
+      "platinum_key": "8",
+      "key_changed": false
+    },
+    {
+      "idx": 50,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "294",
+      "platinum_key": "294",
+      "key_changed": false
+    },
+    {
+      "idx": 51,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "5",
+      "platinum_key": "5",
+      "key_changed": false
+    },
+    {
+      "idx": 67,
+      "in_platinum": true,
+      "status": "verified",
+      "question_reworded": false,
+      "gsm8k_key": "595",
+      "platinum_key": "595",
+      "key_changed": false
+    },
+    {
+      "idx": 100,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "175"
+    },
+    {
+      "idx": 156,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "1400",
+      "platinum_key": "1400",
+      "key_changed": false
+    },
+    {
+      "idx": 165,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "77",
+      "platinum_key": "77",
+      "key_changed": false
+    },
+    {
+      "idx": 183,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "2",
+      "platinum_key": "2",
+      "key_changed": false
+    },
+    {
+      "idx": 185,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "30",
+      "platinum_key": "30",
+      "key_changed": false
+    },
+    {
+      "idx": 200,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "55",
+      "platinum_key": "55",
+      "key_changed": false
+    },
+    {
+      "idx": 210,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "10",
+      "platinum_key": "10",
+      "key_changed": false
+    },
+    {
+      "idx": 226,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "33",
+      "platinum_key": "33",
+      "key_changed": false
+    },
+    {
+      "idx": 238,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "68",
+      "platinum_key": "68",
+      "key_changed": false
+    },
+    {
+      "idx": 243,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "250",
+      "platinum_key": "250",
+      "key_changed": false
+    },
+    {
+      "idx": 249,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "5600",
+      "platinum_key": "5600",
+      "key_changed": false
+    },
+    {
+      "idx": 264,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "400",
+      "platinum_key": "400",
+      "key_changed": false
+    },
+    {
+      "idx": 288,
+      "in_platinum": true,
+      "status": "revised",
+      "question_reworded": false,
+      "gsm8k_key": "3",
+      "platinum_key": "4",
+      "key_changed": true
+    },
+    {
+      "idx": 291,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "2",
+      "platinum_key": "2",
+      "key_changed": false
+    },
+    {
+      "idx": 306,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "10"
+    },
+    {
+      "idx": 414,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "56",
+      "platinum_key": "56",
+      "key_changed": false
+    },
+    {
+      "idx": 430,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "132",
+      "platinum_key": "132",
+      "key_changed": false
+    },
+    {
+      "idx": 457,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "45",
+      "platinum_key": "45",
+      "key_changed": false
+    },
+    {
+      "idx": 459,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "2",
+      "platinum_key": "2",
+      "key_changed": false
+    },
+    {
+      "idx": 468,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "120",
+      "platinum_key": "120",
+      "key_changed": false
+    },
+    {
+      "idx": 491,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "16",
+      "platinum_key": "16",
+      "key_changed": false
+    },
+    {
+      "idx": 514,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "90000",
+      "platinum_key": "90000",
+      "key_changed": false
+    },
+    {
+      "idx": 515,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "160"
+    },
+    {
+      "idx": 529,
+      "in_platinum": true,
+      "status": "verified",
+      "question_reworded": false,
+      "gsm8k_key": "11",
+      "platinum_key": "11",
+      "key_changed": false
+    },
+    {
+      "idx": 550,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "27",
+      "platinum_key": "27",
+      "key_changed": false
+    },
+    {
+      "idx": 588,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "52",
+      "platinum_key": "52",
+      "key_changed": false
+    },
+    {
+      "idx": 589,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "15",
+      "platinum_key": "15",
+      "key_changed": false
+    },
+    {
+      "idx": 598,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "69",
+      "platinum_key": "69",
+      "key_changed": false
+    },
+    {
+      "idx": 602,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "5",
+      "platinum_key": "5",
+      "key_changed": false
+    },
+    {
+      "idx": 630,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "10",
+      "platinum_key": "10",
+      "key_changed": false
+    },
+    {
+      "idx": 632,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "45",
+      "platinum_key": "45",
+      "key_changed": false
+    },
+    {
+      "idx": 643,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "840",
+      "platinum_key": "840",
+      "key_changed": false
+    },
+    {
+      "idx": 654,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "2",
+      "platinum_key": "2",
+      "key_changed": false
+    },
+    {
+      "idx": 697,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "27",
+      "platinum_key": "27",
+      "key_changed": false
+    },
+    {
+      "idx": 712,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "14",
+      "platinum_key": "14",
+      "key_changed": false
+    },
+    {
+      "idx": 730,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "8",
+      "platinum_key": "8",
+      "key_changed": false
+    },
+    {
+      "idx": 744,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "4",
+      "platinum_key": "4",
+      "key_changed": false
+    },
+    {
+      "idx": 755,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "7",
+      "platinum_key": "7",
+      "key_changed": false
+    },
+    {
+      "idx": 770,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "4",
+      "platinum_key": "4",
+      "key_changed": false
+    },
+    {
+      "idx": 813,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "7",
+      "platinum_key": "7",
+      "key_changed": false
+    },
+    {
+      "idx": 815,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "4",
+      "platinum_key": "4",
+      "key_changed": false
+    },
+    {
+      "idx": 816,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "4500",
+      "platinum_key": "4500",
+      "key_changed": false
+    },
+    {
+      "idx": 823,
+      "in_platinum": true,
+      "status": "revised",
+      "question_reworded": false,
+      "gsm8k_key": "14",
+      "platinum_key": "18",
+      "key_changed": true
+    },
+    {
+      "idx": 860,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "3",
+      "platinum_key": "3",
+      "key_changed": false
+    },
+    {
+      "idx": 861,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "30",
+      "platinum_key": "30",
+      "key_changed": false
+    },
+    {
+      "idx": 864,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "80",
+      "platinum_key": "80",
+      "key_changed": false
+    },
+    {
+      "idx": 871,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "48",
+      "platinum_key": "48",
+      "key_changed": false
+    },
+    {
+      "idx": 879,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "575",
+      "platinum_key": "575",
+      "key_changed": false
+    },
+    {
+      "idx": 886,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "20",
+      "platinum_key": "20",
+      "key_changed": false
+    },
+    {
+      "idx": 903,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "16",
+      "platinum_key": "16",
+      "key_changed": false
+    },
+    {
+      "idx": 920,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "47",
+      "platinum_key": "47",
+      "key_changed": false
+    },
+    {
+      "idx": 935,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "64800",
+      "platinum_key": "64800",
+      "key_changed": false
+    },
+    {
+      "idx": 936,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "250",
+      "platinum_key": "250",
+      "key_changed": false
+    },
+    {
+      "idx": 938,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "4",
+      "platinum_key": "4",
+      "key_changed": false
+    },
+    {
+      "idx": 944,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "34",
+      "platinum_key": "34",
+      "key_changed": false
+    },
+    {
+      "idx": 961,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "225",
+      "platinum_key": "225",
+      "key_changed": false
+    },
+    {
+      "idx": 962,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "1000"
+    },
+    {
+      "idx": 980,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "90",
+      "platinum_key": "90",
+      "key_changed": false
+    },
+    {
+      "idx": 981,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "7",
+      "platinum_key": "7",
+      "key_changed": false
+    },
+    {
+      "idx": 987,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "3",
+      "platinum_key": "3",
+      "key_changed": false
+    },
+    {
+      "idx": 1004,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "8",
+      "platinum_key": "8",
+      "key_changed": false
+    },
+    {
+      "idx": 1005,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "1490",
+      "platinum_key": "1490",
+      "key_changed": false
+    },
+    {
+      "idx": 1020,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "22",
+      "platinum_key": "22",
+      "key_changed": false
+    },
+    {
+      "idx": 1027,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "12",
+      "platinum_key": "12",
+      "key_changed": false
+    },
+    {
+      "idx": 1029,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "34",
+      "platinum_key": "34",
+      "key_changed": false
+    },
+    {
+      "idx": 1037,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "10",
+      "platinum_key": "10",
+      "key_changed": false
+    },
+    {
+      "idx": 1048,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "7400"
+    },
+    {
+      "idx": 1050,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "655",
+      "platinum_key": "655",
+      "key_changed": false
+    },
+    {
+      "idx": 1051,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "15",
+      "platinum_key": "15",
+      "key_changed": false
+    },
+    {
+      "idx": 1060,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "31",
+      "platinum_key": "31",
+      "key_changed": false
+    },
+    {
+      "idx": 1071,
+      "in_platinum": true,
+      "status": "revised",
+      "question_reworded": false,
+      "gsm8k_key": "251",
+      "platinum_key": "257",
+      "key_changed": true
+    },
+    {
+      "idx": 1074,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "750"
+    },
+    {
+      "idx": 1101,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "16",
+      "platinum_key": "16",
+      "key_changed": false
+    },
+    {
+      "idx": 1117,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "9",
+      "platinum_key": "9",
+      "key_changed": false
+    },
+    {
+      "idx": 1121,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "35",
+      "platinum_key": "35",
+      "key_changed": false
+    },
+    {
+      "idx": 1122,
+      "in_platinum": true,
+      "status": "verified",
+      "question_reworded": false,
+      "gsm8k_key": "18",
+      "platinum_key": "18",
+      "key_changed": false
+    },
+    {
+      "idx": 1135,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "32",
+      "platinum_key": "32",
+      "key_changed": false
+    },
+    {
+      "idx": 1139,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "1",
+      "platinum_key": "1",
+      "key_changed": false
+    },
+    {
+      "idx": 1141,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "20",
+      "platinum_key": "20",
+      "key_changed": false
+    },
+    {
+      "idx": 1146,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "16",
+      "platinum_key": "16",
+      "key_changed": false
+    },
+    {
+      "idx": 1155,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "13",
+      "platinum_key": "13",
+      "key_changed": false
+    },
+    {
+      "idx": 1172,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "93",
+      "platinum_key": "93",
+      "key_changed": false
+    },
+    {
+      "idx": 1178,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "17",
+      "platinum_key": "17",
+      "key_changed": false
+    },
+    {
+      "idx": 1182,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "1800",
+      "platinum_key": "1800",
+      "key_changed": false
+    },
+    {
+      "idx": 1199,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "2",
+      "platinum_key": "2",
+      "key_changed": false
+    },
+    {
+      "idx": 1201,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "42",
+      "platinum_key": "42",
+      "key_changed": false
+    },
+    {
+      "idx": 1223,
+      "in_platinum": false,
+      "status": "removed",
+      "gsm8k_key": "8"
+    },
+    {
+      "idx": 1229,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "36",
+      "platinum_key": "36",
+      "key_changed": false
+    },
+    {
+      "idx": 1230,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "440",
+      "platinum_key": "440",
+      "key_changed": false
+    },
+    {
+      "idx": 1257,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "14",
+      "platinum_key": "14",
+      "key_changed": false
+    },
+    {
+      "idx": 1272,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "296",
+      "platinum_key": "296",
+      "key_changed": false
+    },
+    {
+      "idx": 1274,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "38",
+      "platinum_key": "38",
+      "key_changed": false
+    },
+    {
+      "idx": 1283,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "60",
+      "platinum_key": "60",
+      "key_changed": false
+    },
+    {
+      "idx": 1306,
+      "in_platinum": true,
+      "status": "consensus",
+      "question_reworded": false,
+      "gsm8k_key": "2",
+      "platinum_key": "2",
+      "key_changed": false
+    }
+  ]
+}

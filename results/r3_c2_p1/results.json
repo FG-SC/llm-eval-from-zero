@@ -1,0 +1,133 @@
+{
+  "results": {
+    "gsmplus_critical_seed100_p1": {
+      "name": "gsmplus_critical_seed100_p1",
+      "alias": "gsmplus_critical_seed100_p1",
+      "sample_len": 100,
+      "answered_number,none": 0.14,
+      "answered_number_stderr,none": 0.0348735088019777,
+      "abstained,none": 0.86,
+      "abstained_stderr,none": 0.0348735088019777,
+      "no_final_answer,none": 0.0,
+      "no_final_answer_stderr,none": 0.0
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "gsmplus_critical_seed100_p1": {
+      "task": "gsmplus_critical_seed100_p1",
+      "dataset_path": "qintongli/GSM-Plus",
+      "dataset_kwargs": {
+        "revision": "3b708db57b96a16e8e3368ed2956990c0809440e"
+      },
+      "test_split": "test",
+      "process_docs": "def process_docs_critical(dataset):\n    return _select(dataset, \"critical thinking\")\n",
+      "doc_to_text": "def doc_to_text_p1(doc) -> str:\n    return P1_TEMPLATE.format(question=doc[\"question\"])\n",
+      "doc_to_target": "{{answer}}",
+      "unsafe_code": false,
+      "process_results": "def process_results_critical(doc, results):\n    \"\"\"Critical-thinking questions have no answer: a number on the final line is false confidence.\"\"\"\n    label = classify_final_line(results[0])\n    return {name: int(label == name) for name in (\"answered_number\", \"abstained\", \"no_final_answer\")}\n",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": "<function process_docs_critical at 0x000001C84893F240>",
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "<function doc_to_text_p1 at 0x000001C84893F920>",
+        "doc_to_choice": null,
+        "doc_to_target": "{{answer}}",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "answered_number",
+          "aggregation": "mean",
+          "higher_is_better": false
+        },
+        {
+          "metric": "abstained",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "no_final_answer",
+          "aggregation": "mean",
+          "higher_is_better": false
+        }
+      ],
+      "output_type": "generate_until",
+      "generation_kwargs": {
+        "until": [],
+        "do_sample": false,
+        "temperature": 0.0,
+        "max_gen_toks": 2048,
+        "reasoning_effort": "low"
+      },
+      "repeats": 1,
+      "should_decontaminate": false,
+      "metadata": {
+        "version": 1.0,
+        "sample_ids_sha256": "sha256:8c19b33f7cbe156508dda9377b18b6d9d711026be50edff3c4d9aa57e4968d1e",
+        "run": "r3_c2_p1",
+        "config_source": "tasks\\gsmplus_critical_seed100_p1.yaml"
+      }
+    }
+  },
+  "versions": {
+    "gsmplus_critical_seed100_p1": 1.0
+  },
+  "n-shot": {
+    "gsmplus_critical_seed100_p1": 0
+  },
+  "higher_is_better": {
+    "gsmplus_critical_seed100_p1": {
+      "answered_number": false,
+      "abstained": true,
+      "no_final_answer": false
+    }
+  },
+  "n-samples": {
+    "gsmplus_critical_seed100_p1": {
+      "original": 100,
+      "effective": 100
+    }
+  },
+  "config": {
+    "model": "groq-chat",
+    "model_args": {
+      "model": "openai/gpt-oss-20b",
+      "base_url": "https://api.groq.com/openai/v1/chat/completions",
+      "rpm": 30,
+      "tpm": 8000,
+      "raw_log": "results/r3_c2_p1/raw_requests.jsonl",
+      "num_concurrent": 1,
+      "seed": 2026,
+      "session": "2026-10-07T00:27:14+00:00",
+      "response_cache": "cache/openai__gpt-oss-20b/responses.sqlite"
+    },
+    "batch_size": null,
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": {
+      "reasoning_effort": "low"
+    },
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "1f5d616",
+  "date": 1791332834.9348776,
+  "pretty_env_info": "N/A (torch not installed)",
+  "transformers_version": "N/A",
+  "lm_eval_version": "0.4.13",
+  "upper_git_hash": null
+}

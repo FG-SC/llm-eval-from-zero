@@ -1,0 +1,546 @@
+{
+  "description": "The 100 GSM8K test questions used in every run (drawn once).",
+  "dataset": {
+    "path": "openai/gsm8k",
+    "name": "main",
+    "split": "test",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "n_rows": 1319
+  },
+  "draw": {
+    "code": "random.Random(2026).sample(range(1319), 100)",
+    "python": "3.12",
+    "order": [
+      243,
+      654,
+      1029,
+      1048,
+      210,
+      457,
+      1230,
+      1272,
+      1139,
+      861,
+      1172,
+      1121,
+      1005,
+      1201,
+      903,
+      491,
+      5,
+      1257,
+      165,
+      226,
+      588,
+      200,
+      920,
+      23,
+      1004,
+      643,
+      430,
+      813,
+      515,
+      712,
+      730,
+      770,
+      1051,
+      1306,
+      156,
+      697,
+      183,
+      1141,
+      1101,
+      598,
+      589,
+      936,
+      288,
+      1182,
+      632,
+      50,
+      755,
+      744,
+      944,
+      864,
+      185,
+      816,
+      1199,
+      1135,
+      1020,
+      238,
+      871,
+      1037,
+      1229,
+      815,
+      1074,
+      529,
+      860,
+      1155,
+      981,
+      1050,
+      1060,
+      51,
+      1178,
+      459,
+      264,
+      100,
+      1071,
+      1274,
+      879,
+      962,
+      291,
+      987,
+      468,
+      249,
+      1283,
+      935,
+      961,
+      1117,
+      514,
+      1146,
+      823,
+      630,
+      1122,
+      1027,
+      980,
+      886,
+      414,
+      602,
+      550,
+      18,
+      67,
+      306,
+      1223,
+      938
+    ],
+    "order_sha256": "11e4cf1e597bad2b3a77e4d464700202275a6c77e7f9dbb81f40bb4c49d6e67d"
+  },
+  "items": [
+    {
+      "idx": 5,
+      "question_sha256": "f76242d8ac82991c0a510d65901528f165ea57ae3b2653ff9be9c0d0c6c79fae"
+    },
+    {
+      "idx": 18,
+      "question_sha256": "851e6439f44e55eecd8d0ae494751c927b1fe964507c75e5709fd09fb2dab402"
+    },
+    {
+      "idx": 23,
+      "question_sha256": "fe06ee435f2baa145d56dca77766523e9dc0b63062b40b042a498f3e7e4b10c4"
+    },
+    {
+      "idx": 50,
+      "question_sha256": "23fdf08ce87602ede28ef4240e103f5089e507cb20da5a873e82fb1588dda333"
+    },
+    {
+      "idx": 51,
+      "question_sha256": "971dabc5c71b6706fbcb9e063b691f12effce5e1ff53254b4123d7904ab52420"
+    },
+    {
+      "idx": 67,
+      "question_sha256": "213b455e43607094e6ea5fd1da8f3f35ad606004febda7c903b665296c9d555a"
+    },
+    {
+      "idx": 100,
+      "question_sha256": "1c606349bd458f0d6194ffcfa35022c89a415f1535609172a34d9e18405fe1e8"
+    },
+    {
+      "idx": 156,
+      "question_sha256": "3ca0e746f10ccf16f6b66c5397f3c778065f64840a4554d5b29e037acc383ea3"
+    },
+    {
+      "idx": 165,
+      "question_sha256": "af00da18ead667e55db61309a2f1707a9aa2e8e590959b4132b13bde2ecd18ba"
+    },
+    {
+      "idx": 183,
+      "question_sha256": "f29cc49868a9b93fc1f8bc183ee65933c5743a67523e973f84fc6014cd9d4809"
+    },
+    {
+      "idx": 185,
+      "question_sha256": "85ff4f96b8c7828badc6e85e55d3e685addb248181cfe06744c0500c24fcf229"
+    },
+    {
+      "idx": 200,
+      "question_sha256": "8c508389106306ae864c1ef86595aa13980751f2f0220e3110b444ca2953a570"
+    },
+    {
+      "idx": 210,
+      "question_sha256": "0f4d92e85aa0c2c5aebf8846e25b3d5532bf4ec8a3dd896db39e4fa0674d8b6f"
+    },
+    {
+      "idx": 226,
+      "question_sha256": "d58e5838fc7750bc87cf98d3888c5cb7bac568a0c7969d1466ce5fd6acb956fc"
+    },
+    {
+      "idx": 238,
+      "question_sha256": "664927c9965ff5ad2b75b556ae51e0ddc812e7b7e372d06952005656f6ca4683"
+    },
+    {
+      "idx": 243,
+      "question_sha256": "30861a3b0fea0754c224e45f3c24c88176a2c4e45ae707a2da0f68bb39f55df1"
+    },
+    {
+      "idx": 249,
+      "question_sha256": "48dde2ddd9ccb1a5cda675f6f4123aaefe679323ef29c9db53d86a7c4acf84c6"
+    },
+    {
+      "idx": 264,
+      "question_sha256": "8ee7c8708dc2bb2e1b9911946f1954ad51d7d42904115ddddd4c198f76ea0bd4"
+    },
+    {
+      "idx": 288,
+      "question_sha256": "18becb25c8a05be72a1e2e9572117b0cdd79df3784c9b733dc2d8f8ae5c3048c"
+    },
+    {
+      "idx": 291,
+      "question_sha256": "6455dc9a850b911db8a48a2c99c5803bda300cbc3389b2bad0ba103bdc76d740"
+    },
+    {
+      "idx": 306,
+      "question_sha256": "699de56ad0ea33b64416fc2e9de2d7804c4d35b2b791c69060c0d06bea936400"
+    },
+    {
+      "idx": 414,
+      "question_sha256": "60082e624bf9d57131e16a4c5db8fefef66ee569bf3d607a2e92313303b6aff0"
+    },
+    {
+      "idx": 430,
+      "question_sha256": "ef01fcbd1d0c2062bb0508049de00c8459909734d0afebb45eed49e4df0d3eeb"
+    },
+    {
+      "idx": 457,
+      "question_sha256": "7a9da644d3e1e8b3680a5c6cd25acb11cb2573f5cd755841272f8113dde35453"
+    },
+    {
+      "idx": 459,
+      "question_sha256": "532304f7dae44d4c14e6311b2009749bb9401922a598ecbcd0bf830f0198ca2a"
+    },
+    {
+      "idx": 468,
+      "question_sha256": "1822f445d665f9857b7c0a84a55c01f84ec6c8afe970798acf915b9e7483af4f"
+    },
+    {
+      "idx": 491,
+      "question_sha256": "0e6917da254f9628339fe01af46d6cea6480a39db7e1ce845da507992460372a"
+    },
+    {
+      "idx": 514,
+      "question_sha256": "b03a404f690052ca9b148570d6aa398bafd6d8a583892c679908cecd78b24f83"
+    },
+    {
+      "idx": 515,
+      "question_sha256": "2b308251141e0220c1de5d1a71cd131dd42110a153adb619faa38de701750e49"
+    },
+    {
+      "idx": 529,
+      "question_sha256": "c1f31e1afb573aad0df0388a03defc1da6508e00271faf7ea205ff886d807b67"
+    },
+    {
+      "idx": 550,
+      "question_sha256": "f5cc8b9f8550f2d6c785df4ff7895597e558fe62e40a5d451c2dc1ef176cb405"
+    },
+    {
+      "idx": 588,
+      "question_sha256": "4ec5e5a37705b3e0477e8c8c1c2840a263952f7132e88a4dd6176b8afb0b452d"
+    },
+    {
+      "idx": 589,
+      "question_sha256": "15e94c36279f5ef449d222b30bb3d5fcc769b8598be32965e08594bfe484e37c"
+    },
+    {
+      "idx": 598,
+      "question_sha256": "7ad70902d789af62452ac710046e219dcaba77b86ef58529c38f5a8c9a19f81b"
+    },
+    {
+      "idx": 602,
+      "question_sha256": "849c7cd3b8acb6ff24ebd2b877e94a19712d13a8b57777c881dd8beaca60022c"
+    },
+    {
+      "idx": 630,
+      "question_sha256": "c41d4feabce1e9a42763dab6291231bff11efb6688afd2295b81acf924a38624"
+    },
+    {
+      "idx": 632,
+      "question_sha256": "12ba917704bbc51c6e7a1aba39a2fff82e82ec12941d6fec5d3010131320b746"
+    },
+    {
+      "idx": 643,
+      "question_sha256": "d01547b90f3b34ef24fde0356833a59fd43cf62ffb1a27bd2aad04bc6314aa2e"
+    },
+    {
+      "idx": 654,
+      "question_sha256": "c3c3f10ddfc947eaf459582e94f30b07e75bb97bd7f983c80dfe32b0eb69c4ff"
+    },
+    {
+      "idx": 697,
+      "question_sha256": "8b5b56f07c0d2b5a9c712f9f9c5a14c97647135996c31d70fa60b35d9c85ab44"
+    },
+    {
+      "idx": 712,
+      "question_sha256": "00654999ca85285f19b8896f7ffaaf5981bf88701cf26a8e50650cf959fea3da"
+    },
+    {
+      "idx": 730,
+      "question_sha256": "c5a5231d32ac6318870984b6980ea00b437486c441f6f9eaa38b78ad2096b097"
+    },
+    {
+      "idx": 744,
+      "question_sha256": "bad1d10bacc7e55841f662aec3f8042dce6338be2592d91b4a05890f5ca9c6c5"
+    },
+    {
+      "idx": 755,
+      "question_sha256": "95bbb52fb63157bb0b927ee1af8c8e97f23a61648b1884e4ea3b022352610d99"
+    },
+    {
+      "idx": 770,
+      "question_sha256": "6b14d2eb20ae834c16bb2f9121a37bea3888e3694704164071952487b8ef9eba"
+    },
+    {
+      "idx": 813,
+      "question_sha256": "c013f4f635381639239c5c9d13077b71e5f5983e515112c08651de4c214f4b7b"
+    },
+    {
+      "idx": 815,
+      "question_sha256": "32471742ddca3b507babe53b4309e6ec21666d4e5bd7507892a8f064d17547da"
+    },
+    {
+      "idx": 816,
+      "question_sha256": "fcef2039185ce0d99b5f6c6ab186f69dd11e4b0d7d86142edfc1ba064f5ac2f1"
+    },
+    {
+      "idx": 823,
+      "question_sha256": "99d384b14857cc004d17ce6b2b437cfb14f23e87c7ed28b65c261b44a9b60d98"
+    },
+    {
+      "idx": 860,
+      "question_sha256": "5264cc08824c651080e4e10874253bde1c107f066f9878544eb34f4c5e9f3e03"
+    },
+    {
+      "idx": 861,
+      "question_sha256": "39d6bd05131a48026d9465881432cccd8028ee9e19352de22eb57b7cf218223f"
+    },
+    {
+      "idx": 864,
+      "question_sha256": "80c6c993731f0b11c9cbb188419d0fec8de3c77caaad1e15da7cea4851f3c727"
+    },
+    {
+      "idx": 871,
+      "question_sha256": "99ee5c3fa91539e59627afd3887d7ddb3eb212bcfc618db14a41297cb1c6950b"
+    },
+    {
+      "idx": 879,
+      "question_sha256": "c62dc57e651d0ae91c4a03a245c65989dc11f578edb784d0dc3bff4ce9bf88e0"
+    },
+    {
+      "idx": 886,
+      "question_sha256": "8f493c8c13d4ceec7d31c8bbbd92cf2122a0bed3a64c3f889913459d8aa90109"
+    },
+    {
+      "idx": 903,
+      "question_sha256": "c423e612c1d97c156ddd83155043abedc1464dbcac5a949a83fb17d37f792f1b"
+    },
+    {
+      "idx": 920,
+      "question_sha256": "3ccfe3e67ea94384552e363edb484cd9954feb60d1ce5867b4d1c80abf6f8764"
+    },
+    {
+      "idx": 935,
+      "question_sha256": "298733e22a4f1a0dc82500ad0b041017a0e457aa2a53ac060de891828402e70b"
+    },
+    {
+      "idx": 936,
+      "question_sha256": "79a51caa84107c5dcf3f151db2465e374936204c015989cbcb2dfb0bcf2eb30d"
+    },
+    {
+      "idx": 938,
+      "question_sha256": "f4ca8fb1daff6f1fc4d8ae7518eb2c514e333ff1b911ffb9576f0082bc5e4192"
+    },
+    {
+      "idx": 944,
+      "question_sha256": "166c80c7c0564d74494e4b196dcd481ea905a73b98ebf210377c95b7275ab955"
+    },
+    {
+      "idx": 961,
+      "question_sha256": "1e36f7e8724ffc3da1a9999e1e0a7684c22bda3496acb0193ef2df6df8f983d7"
+    },
+    {
+      "idx": 962,
+      "question_sha256": "adda018a8588695c0d5e17c88d8941960587b5002bc0466912e97d1e02fe4e43"
+    },
+    {
+      "idx": 980,
+      "question_sha256": "522e7decf33f004bd4cf1bdedabcff34873970fad28ed55e24537cf7b2717cd9"
+    },
+    {
+      "idx": 981,
+      "question_sha256": "315ff63cd782f683caba7b3fe4626c1605d0bcf4c2379e59c82e35745b2bcff2"
+    },
+    {
+      "idx": 987,
+      "question_sha256": "5d192b58a021ed373d6a796f14820ba265cbf156a4ccc756eeb16a4e1c4f92c1"
+    },
+    {
+      "idx": 1004,
+      "question_sha256": "9f87e95b2d0dffa988521f450fda987ec2e6d0467697159327704eafcfcbe90f"
+    },
+    {
+      "idx": 1005,
+      "question_sha256": "053f59b0619cf6f928214a946f513b6d7f51516c53fb4c533578d2ec40c9a18d"
+    },
+    {
+      "idx": 1020,
+      "question_sha256": "8cae947b581d6be24ea0d1a2bd867b715a54e880ccff5fd798f4fd073c7bd4bc"
+    },
+    {
+      "idx": 1027,
+      "question_sha256": "19e905ba9674592c7e35f39865f4b174c9f22f9674814139ac736397117b5d18"
+    },
+    {
+      "idx": 1029,
+      "question_sha256": "deca50be4e140310c008a188c85c5da91d1f766df5506c9766a222fca86566fd"
+    },
+    {
+      "idx": 1037,
+      "question_sha256": "5f6fa054e8d06e021f9ffa76040dd49a7bbeb2e9c0c9d1a093a4e3422675b370"
+    },
+    {
+      "idx": 1048,
+      "question_sha256": "6feb7653ae34934a94bd843384672437d0ca7134689faf64ba96096c96137280"
+    },
+    {
+      "idx": 1050,
+      "question_sha256": "8af254886db4666b82ef6475cef3644fe4ed391d4eae588c13b19173d19f75ad"
+    },
+    {
+      "idx": 1051,
+      "question_sha256": "c357caa6bcb53589584efdc4ee8f471480bbbd09e797bcb454f962379d62bde6"
+    },
+    {
+      "idx": 1060,
+      "question_sha256": "e9e2335d2c234b698958171696099d15f1c4ee24136efb86b95713e06a9930ed"
+    },
+    {
+      "idx": 1071,
+      "question_sha256": "8cb9405680b09bfb8fa429740f1ff8bda7056b297e4863811f3a2c4c199c3a74"
+    },
+    {
+      "idx": 1074,
+      "question_sha256": "4ba473f00c2f4b5bdda815ab2ce0ec413985b2e5e73d87153b1b8ecd543c7689"
+    },
+    {
+      "idx": 1101,
+      "question_sha256": "d57cde2828033a4bc986ba634996e6c4666e3f3f7642f8ab5f639f9cce773b3d"
+    },
+    {
+      "idx": 1117,
+      "question_sha256": "906a073ff1d122b381046d8d97ac4eb2bca0238f841cda346bc5487a4ce3fbc5"
+    },
+    {
+      "idx": 1121,
+      "question_sha256": "6b446cb06ee1193ccef8d5de36536b9a33523e0256e0eac9eaa19ecbf8440505"
+    },
+    {
+      "idx": 1122,
+      "question_sha256": "9a1d207ae486776ab2a316f66781cfa81f91a7a5685758e43d6a1d565aeabc5d"
+    },
+    {
+      "idx": 1135,
+      "question_sha256": "ecdfb364f643792d441dc264a9b72a55f6ff31e92a7db378e0a2de645d783306"
+    },
+    {
+      "idx": 1139,
+      "question_sha256": "cd13703a96a61fdff8e2711aeed23d659572cf2fc9ae50d25316ad239b2bbede"
+    },
+    {
+      "idx": 1141,
+      "question_sha256": "8367bac953583369ff93c1b025213c6f9d96d98c679431dbd16d11ce66c460a9"
+    },
+    {
+      "idx": 1146,
+      "question_sha256": "1ed49328b7b1b7aa2fb84ac3248f098748e2af35c912ce9d766326b052cee788"
+    },
+    {
+      "idx": 1155,
+      "question_sha256": "9237e3582b5184bb8826773c262ded3ea58cdccceabce31e0ee888b6af20b014"
+    },
+    {
+      "idx": 1172,
+      "question_sha256": "8946bef80dca27a607e682ab7218572f60dea9b170a1c154381f5a9e4f7d3336"
+    },
+    {
+      "idx": 1178,
+      "question_sha256": "173e1d62ebee6edae8489a337e8278c273017bc478a2df85b70e488096d1d89a"
+    },
+    {
+      "idx": 1182,
+      "question_sha256": "cc0ffee694a5bc09e07d3ad2fd64b3912db6888ddb6a1e68f3205865221c8635"
+    },
+    {
+      "idx": 1199,
+      "question_sha256": "afec5cd2fe1d2e1ec02edd7450c8de7cc40921105415c0064f133702a7938459"
+    },
+    {
+      "idx": 1201,
+      "question_sha256": "2e6bc1105e5c98e822fec30689fdba76d3ec019524d23c0b9650e1e31a00a7d3"
+    },
+    {
+      "idx": 1223,
+      "question_sha256": "f2cd1186949207c89eeab2662cd4342e75944cfbb1c637039ef88895c61d679d"
+    },
+    {
+      "idx": 1229,
+      "question_sha256": "38bdd73bd14b5fa9dffd32a1d75ff7494cdfb37d9d61f7437db0f5e6b5f8052c"
+    },
+    {
+      "idx": 1230,
+      "question_sha256": "cd7058cf798fc4337d547bc812b2e173b134408b437832f836122189285c32f4"
+    },
+    {
+      "idx": 1257,
+      "question_sha256": "3a86a0576f3212898885f2fe36ad9516afd3535226eb338fffa055479adc2691"
+    },
+    {
+      "idx": 1272,
+      "question_sha256": "db8209d8cf78aacb65c409d3046bd5a78e0c641c5e4d52f8006efcd1fd8ee64a"
+    },
+    {
+      "idx": 1274,
+      "question_sha256": "1e1f15a4f98ff3cf54bcbbb5263f703deff6f0e7268b165b4efea0d986a207d0"
+    },
+    {
+      "idx": 1283,
+      "question_sha256": "6870edb83ee196cd18b87e4460ec2f54a81bf113d2f425b28b50da189cbe61f7"
+    },
+    {
+      "idx": 1306,
+      "question_sha256": "19f8f54a31c562e3640fdcc97dc3f21924dad555306a7e47377df31aa8cc6714"
+    }
+  ],
+  "flagged": [
+    {
+      "idx": 1060,
+      "variant": "critical thinking",
+      "reason": "answerable: the removed sentence is never used in the seed solution, so gold 'None' is wrong (answer 31)"
+    },
+    {
+      "idx": 1051,
+      "variant": "critical thinking",
+      "reason": "debatable: the removed fact (16 cups in a gallon) is common knowledge"
+    },
+    {
+      "idx": 1122,
+      "variant": "critical thinking",
+      "reason": "debatable: says 'several workers' but asks about 'the fifth worker'"
+    },
+    {
+      "idx": 980,
+      "variant": "distraction insertion",
+      "reason": "ambiguous: whether pearls count as beads changes the answer (90 vs 150)"
+    },
+    {
+      "idx": 981,
+      "variant": "distraction insertion",
+      "reason": "ambiguous: 'that amount' has two possible referents"
+    }
+  ]
+}

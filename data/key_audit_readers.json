@@ -1,0 +1,231 @@
+{
+  "description": "Raw verdicts behind data/key_audit.json: 4 AI readers classified the 9 answers the grader marked wrong in run r1_c0. Not a human audit.",
+  "date": "2026-10-06",
+  "what_each_reader_saw": "for each of the 9 items: the question, GSM8K's official worked solution and the model's complete answer. Not GSM8K-Platinum, and not the other readers' verdicts.",
+  "instructions": "(You are independent rater #N; do not look for other raters' notes.)\nRead a file: 9 GSM8K math questions that an automatic grader marked WRONG for a model.\nWork each problem out yourself from the question text, then classify each item with exactly one label:\n- MODEL_ERROR: the question is clear, the answer key is right, the model's final answer is wrong.\n- KEY_ERROR: the official answer key is wrong (the model may or may not be right).\n- AMBIGUOUS_QUESTION: the question admits more than one reasonable reading, and the key and the model followed different readings.\n- GRADER_FORMAT: the model's final answer is right, but it was written in a form the exact-match grader does not accept.\nAlso say whether the model's final answer is defensible. Be strict: prefer MODEL_ERROR unless the alternative reading is genuinely reasonable for a careful reader. Justify each in 1-2 sentences with the arithmetic.",
+  "readers": [
+    {
+      "reader": "assistant",
+      "who": "Claude (claude-opus-5-5), the AI assistant that ran the experiment",
+      "items": [
+        {
+          "idx": 306,
+          "label": "AMBIGUOUS_QUESTION"
+        },
+        {
+          "idx": 515,
+          "label": "AMBIGUOUS_QUESTION"
+        },
+        {
+          "idx": 815,
+          "label": "MODEL_ERROR"
+        },
+        {
+          "idx": 823,
+          "label": "KEY_ERROR"
+        },
+        {
+          "idx": 962,
+          "label": "AMBIGUOUS_QUESTION"
+        },
+        {
+          "idx": 1048,
+          "label": "AMBIGUOUS_QUESTION"
+        },
+        {
+          "idx": 1074,
+          "label": "AMBIGUOUS_QUESTION"
+        },
+        {
+          "idx": 1122,
+          "label": "MODEL_ERROR"
+        },
+        {
+          "idx": 1223,
+          "label": "GRADER_FORMAT"
+        }
+      ],
+      "note": "its written reasons are the 'reason' fields of data/key_audit.json"
+    },
+    {
+      "reader": "re-reader 1",
+      "who": "Claude (claude-opus-5-5), a separate session that did not see the other readers' verdicts",
+      "items": [
+        {
+          "idx": 306,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "Item 1: 60 x 2/3 = 40 are sold in the morning, leaving 20. Read literally, 'half of what is left is sold equally in the afternoon and evening' means 20/2 = 10 are sold, split 5 and 5 (model: 5); the key reads it as all 20 split in two halves, 10 each (key: 10), and a careful reader could take either. Caveat: the model first states the key's reading ('Half of these remaining loaves are sold in the afternoon and the other half in the evening') and then halves again, so its final answer matches the literal reading but its explanation contradicts itself, which makes it a poor showcase example."
+        },
+        {
+          "idx": 515,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "Item 2: in '8 packs of 5 canvas bags for $4 each', the $4 can be per pack (cost 8 x $4 = $32, profit 40 x $8 - $32 = $288, the model) or per bag (cost 40 x $4 = $160, profit $320 - $160 = $160, the key). In ordinary English 'each' attaches to the counted noun 'packs' (compare '3 boxes of 12 eggs for $5 each'); the key relies on the parallel 'sold them ... for $8 each'. The model stated its reading ('Each pack costs $4') and computed consistently."
+        },
+        {
+          "idx": 815,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "Item 3: with zest = Z, fragrance = Z, salt = 2Z, sugar = 2Z and oil = 4Z, the total is 10Z = 10, so Z = 1 and oil = 4, as the key says. The model's equations were right, but it rewrote S + 2S + S/2 + S/2 + S (which is 5S) as '(S + 2S + S + S) + (S/2 + S/2)' = 6S, adding an extra S. That gave S = 5/3 and oil = 10/3 instead of S = 2 and oil = 4. It noticed the non-integer result but never found the slip."
+        },
+        {
+          "idx": 823,
+          "label": "KEY_ERROR",
+          "model_answer_defensible": true,
+          "justification": "Item 4: Sasha scores 14 in game 1, Julie scores 14 - 4 = 10, and Sasha scores 10 - 6 = 4 in game 2, so Sasha's total is 14 + 4 = 18, the model's answer. The key's last line, 'Sasha scored 10+4=14 points in the two games', adds Julie's game-1 score (10) instead of Sasha's (14), so the official 14 is wrong."
+        },
+        {
+          "idx": 962,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "Item 5: the tickets cost 400 x 1.5 = $600 (model), and tickets plus supplies cost 600 + 400 = $1000 (key). 'How much does travel cost?' echoes 'The tickets for travel cost, in total, 50% more than the supplies', so reading 'travel' as the tickets is at least as natural as reading it as the whole trip. The model's arithmetic is correct under that reading."
+        },
+        {
+          "idx": 1048,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "Item 6: in standard math usage, 'depreciates at a constant rate of 21% per year' means compound decay: 20000 x 0.79^3 = 20000 x 0.493039 = $9860.78, rounded to 9861 (model). The key uses straight-line depreciation instead, 21% of the purchase price each year: 20000 - 3 x 4200 = $7400. Both are legitimate methods and the question does not say which, though the compound reading is the textbook default."
+        },
+        {
+          "idx": 1074,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "Item 7: the key (250 + 500 = 750) applies 'within an hour' to both clauses, while the model applies it only to the nearer one ('started and finished another 500 piece puzzle within an hour'), so only 500 pieces fall in 'that hour'. That is a real ambiguity about what the phrase covers, but this is the weakest case: under the model's reading the first clause is pointless, and 750 is clearly the intended answer. Separately, the model ended with \\boxed{500} and no '####' line, so strict-match could not extract any answer at all."
+        },
+        {
+          "idx": 1122,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "Item 8: the four known workers make (2 x 6 + 2 x 4) x 10 = 200 toys. Being 20 short means 400 - 20 = 380 were made, so the fifth worker made 180 toys, or 180 / 10 = 18 per hour (the key is right). The model treated the 20-toy shortfall as the fifth worker's output (20 / 10 = 2 per hour), which would mean only 220 toys were made and 180 were still missing, contradicting the question."
+        },
+        {
+          "idx": 1223,
+          "label": "GRADER_FORMAT",
+          "model_answer_defensible": true,
+          "justification": "Item 9: 16 x $0.25 = $4 plus (36 - 16) x $0.20 = $4 gives $8, and the model's '#### 8.00' is numerically equal to the key's 8. The grader in tasks/gsm8k_seed100.yaml (lines 29-33) strips only ',', '$', everything up to '#### ' and a trailing '.', so it compares the string '8.00' with '8'. That fails under both strict-match (line 38) and flexible-extract (line 44, whose last extracted number is also '8.00')."
+        }
+      ]
+    },
+    {
+      "reader": "re-reader 2",
+      "who": "Claude (claude-opus-5-5), a separate session that did not see the other readers' verdicts",
+      "items": [
+        {
+          "idx": 306,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "60 x 2/3 = 40 are sold in the morning, leaving 20. Read literally, 'half of what is left is sold equally in the afternoon and evening' means 20/2 = 10 loaves split equally, so 5 are sold in the afternoon and 10 go unsold (the model). The key splits all 20 half and half, giving 10, which makes either 'half of' or 'equally' redundant. Both readings are reasonable, and the model's 5 is arguably the more literal one."
+        },
+        {
+          "idx": 515,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "In '8 packs of 5 canvas bags for $4 each', 'each' can refer to the packs (the head noun, as in '3 boxes of eggs for $5 each') or to the bags. Per bag: 40 x $8 - 40 x $4 = $160 (key). Per pack: 40 x $8 - 8 x $4 = $320 - $32 = $288 (model). Both are careful readings, and the model's arithmetic is correct under its reading."
+        },
+        {
+          "idx": 815,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "With zest = Z: fragrance = Z, salt = 2Z, sugar = 2Z, oil = 4Z, so 10Z = 10, Z = 1 and oil = 4 (the key is right). The model's equations were correct, but it summed S + 2S + S/2 + S/2 + S as 6S instead of 5S by adding an extra S, which gave S = 5/3 and oil = 10/3. With 5S = 10, S = 2 and oil = 4."
+        },
+        {
+          "idx": 823,
+          "label": "KEY_ERROR",
+          "model_answer_defensible": true,
+          "justification": "Sasha scored 14 in game 1, Julie scored 14 - 4 = 10, and Sasha scored 10 - 6 = 4 in game 2, so Sasha's total is 14 + 4 = 18. The key's last line '10+4=14' adds Julie's game-1 score instead of Sasha's. The key (14) is wrong, and the model's 18 is correct."
+        },
+        {
+          "idx": 962,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "The tickets cost 400 x 1.5 = $600. The key reads 'How much does travel cost?' as the whole trip, 600 + 400 = $1000. The model reads it as the 'tickets for travel' named in the sentence just before, $600. The wording supports both readings, so 600 is defensible."
+        },
+        {
+          "idx": 1048,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "'Depreciates at a constant rate of 21% per year' fits two methods. Straight-line: 21% of $20000 = $4200 per year, so 20000 - 3 x 4200 = $7400 (key). Declining-balance, the usual textbook reading of a percent rate per year: 20000 x 0.79^3 = 20000 x 0.493039 = $9860.78, rounded to $9861 (model). The model's arithmetic is correct under its reading."
+        },
+        {
+          "idx": 1074,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "If 'within an hour' covers the whole sentence, Teddy placed 250 + 500 = 750 pieces (key). If it attaches only to the clause after ', and then' ('started and finished another 500 piece puzzle within an hour'), that hour holds only the second puzzle, 500 (model). This is my weakest ambiguity call: 750 is the more likely intended answer, since word problems normally use all their data. Separately, the model left out '####', so strict-match recorded [invalid] (results/r1_c0/samples_gsm8k_seed100.jsonl, doc_id 77)."
+        },
+        {
+          "idx": 1122,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "The four known workers make (2 x 6 + 2 x 4) x 10 = 200 toys and all five together make 400 - 20 = 380, so the fifth makes 180 / 10 = 18 per hour (the key is right). The model counted the 20 toys still missing after the shift as the fifth worker's output (20 / 10 = 2). That contradicts 'They all work on the order during their 10-hour shift'."
+        },
+        {
+          "idx": 1223,
+          "label": "GRADER_FORMAT",
+          "model_answer_defensible": true,
+          "justification": "16 x $0.25 + 20 x $0.20 = $4 + $4 = $8, and the model's '#### 8.00' is the same value. The exact-match rule removes only commas, '$', the text up to '#### ' and a trailing period (tasks/gsm8k_seed100.yaml lines 29-33). Both filters extracted '8.00' (results/r1_c0/samples_gsm8k_seed100.jsonl, doc_id 92), and that string does not equal '8'."
+        }
+      ]
+    },
+    {
+      "reader": "re-reader 3",
+      "who": "Claude (claude-opus-5-5), a separate session that did not see the other readers' verdicts",
+      "items": [
+        {
+          "idx": 306,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "60 x 2/3 = 40 sold in the morning, 20 left. Read word for word, 'half of what is left' (10) 'is sold equally in the afternoon and evening', which gives 10/2 = 5 (the model). The key instead splits all 20 equally, giving 10, and both readings are grammatical. Caveat: the model's own text contradicts itself. It first writes 'Half of these remaining loaves are sold in the afternoon and the other half in the evening' (which gives 10) and then halves again, so do not show this one as a clean 'the model was right' example."
+        },
+        {
+          "idx": 515,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "In '8 packs of 5 canvas bags for $4 each', 'each' can mean each pack, the thing she bought (compare '3 boxes of 12 eggs for $5 each'). Then cost = 8 x 4 = $32 and profit = 40 x 8 - 32 = $288 (the model). It can also mean each bag, matching 'sold them ... for $8 each': cost = 40 x 4 = $160 and profit = 320 - 160 = $160 (the key). A careful reader could take either, and the model's arithmetic is right for its reading."
+        },
+        {
+          "idx": 815,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "Let Z = zest. Then fragrance = Z, salt = sugar = 2Z and oil = 2 x salt = 4Z, so Z + Z + 2Z + 2Z + 4Z = 10Z = 10, Z = 1 and oil = 4 (the key is right). The model's equation was correct (S + 2S + S/2 + S/2 + S = 5S, so S = 2 and oil = 4), but it regrouped it as '(S + 2S + S + S) + (S/2 + S/2)', counting one S twice. That gave 6S = 10 and oil = 10/3, which is wrong under any reading; strict extracted '10' and flexible '3' (summary.json, examples)."
+        },
+        {
+          "idx": 823,
+          "label": "KEY_ERROR",
+          "model_answer_defensible": true,
+          "justification": "Julie's first game = 14 - 4 = 10. Sasha's second game = 10 - 6 = 4. Sasha's total = 14 + 4 = 18, exactly what the model answered. The official solution's last line, 'Sasha scored 10+4=14 points', adds Julie's 10 instead of Sasha's 14, so the key of 14 is wrong. This answer is actually correct, but it is counted among the 8 'wrong' in summary.json (runs.r1_c0.categories)."
+        },
+        {
+          "idx": 962,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "Tickets = 400 x 1.5 = $600 (the model). The key adds the supplies, 600 + 400 = $1000, reading 'travel' as the whole trip. But 'How much does travel cost?' comes right after 'The tickets for travel cost, in total, 50% more than the supplies', so 600 is at least as natural as 1000."
+        },
+        {
+          "idx": 1048,
+          "label": "AMBIGUOUS_QUESTION",
+          "model_answer_defensible": true,
+          "justification": "'Depreciates at a constant rate of 21% per year' can mean straight-line: 21% of the original price is $4,200 a year, so 20000 - 3 x 4200 = $7,400 (the key). It can also mean compound decline on the current value: 20000 x 0.79^3 = 9,860.78, which the model rounded to 9861. The compound reading is what school math usually means by a constant percentage rate, so the model's answer is defensible; if anything this item leans toward a problem with the key."
+        },
+        {
+          "idx": 1074,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "'Within an hour' at the end of the sentence most naturally covers the whole sequence, 'finished half of a 500 piece puzzle, and then started and finished another', so the answer is 250 + 500 = 750 (the key). The model applied it to the second puzzle only and then stated, with no support in the text, that the first 250 pieces were 'completed before that hour' to reach 500. This is the closest call of the three model errors, because the grammar allows the model's reading, but under that reading the answer is not even determined. The model also gave no '####' line: strict extracted '[invalid]' and flexible '500' (summary.json, examples)."
+        },
+        {
+          "idx": 1122,
+          "label": "MODEL_ERROR",
+          "model_answer_defensible": false,
+          "justification": "The four known workers make (2 x 6 + 2 x 4) x 10 = 200 toys. If 20 of the 400 are still missing, 380 were made, so the fifth worker made 380 - 200 = 180 toys, or 180/10 = 18 per hour (the key is right). The model treated the 20 missing toys as the fifth worker's output (20/10 = 2), a plain reasoning error; the original question clearly says '5 workers'."
+        },
+        {
+          "idx": 1223,
+          "label": "GRADER_FORMAT",
+          "model_answer_defensible": true,
+          "justification": "16 x $0.25 = $4 and 20 x $0.20 = $4, total $8. The model computed this and wrote '#### 8.00'. The exact-match cleanup in tasks/gsm8k_seed100.yaml removes commas, '$', everything up to '#### ', and only a single trailing '.', so '8.00' never becomes '8' and is rejected by both rules (summary.json, example 'Right number, but both rules miss it'); '8' or '8.' would have matched."
+        }
+      ]
+    }
+  ]
+}

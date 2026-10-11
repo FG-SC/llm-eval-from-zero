@@ -1,0 +1,17 @@
+# Models used in this project (both served by Groq's OpenAI-compatible API).
+# limits: free-tier values. rpd/tpm read from x-ratelimit-* headers on 06/10/2026;
+# rpm/tpd from Groq's rate-limits page (not visible in headers).
+model_under_test:
+  id: openai/gpt-oss-20b
+  base_url: https://api.groq.com/openai/v1/chat/completions
+  # model-specific request fields; shared generation settings live in the task YAML
+  gen_kwargs:
+    reasoning_effort: low
+  limits: {rpm: 30, rpd: 1000, tpm: 8000, tpd: 200000}
+
+judge:
+  id: openai/gpt-oss-120b
+  base_url: https://api.groq.com/openai/v1/chat/completions
+  gen_kwargs:
+    reasoning_effort: low
+  limits: {rpm: 30, rpd: 1000, tpm: 8000, tpd: 200000}

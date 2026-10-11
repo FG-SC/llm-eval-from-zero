@@ -1,0 +1,2 @@
+# Keep LF everywhere so file hashes (e.g. data/sample_ids.json) match on every OS.
+* text=auto eol=lf

@@ -1,0 +1,83 @@
+# One entry = one evaluation run over (a part of) the 100 sampled questions.
+# limit: how many of the 100 to use (null = all 100). Never the full 1,319.
+# Rule: a full run starts only after its smoke test passed (smoke: ...); python -m src.run --next checks it.
+# priority: the order --next follows: the Day 4 runs (the pair P0/P1 of the missing-fact exam, then the control),
+# then the Day 5 runs.
+
+# C0, original GSM8K questions (Days 2 and 3)
+smoke_c0:
+  model: model_under_test
+  task: gsm8k_seed100
+  limit: 10
+  purpose: "Smoke test: 10 of the 100 sampled GSM8K questions, zero-shot, prompt P0"
+r1_c0:
+  model: model_under_test
+  task: gsm8k_seed100
+  limit: null
+  smoke: smoke_c0
+  priority: 0
+  purpose: "C0: the 100 sampled GSM8K questions, zero-shot, prompt P0 (Days 2 and 3)"
+
+# C0 asked again with the cache off: how many answers change by chance? (Day 5 baseline)
+r1_c0_retest:
+  model: model_under_test
+  task: gsm8k_seed100
+  limit: null
+  smoke: smoke_c0
+  priority: 5
+  cache: false
+  purpose: "C0 re-asked without the cache: run-to-run variation of the same 100 questions (Day 5)"
+
+# Control for Day 4: answerable questions with permission to abstain
+smoke_c0_p1:
+  model: model_under_test
+  task: gsm8k_seed100_p1
+  limit: 10
+  purpose: "Smoke test: 10 original questions, prompt P1 (may answer UNANSWERABLE)"
+r1_c0_p1:
+  model: model_under_test
+  task: gsm8k_seed100_p1
+  limit: null
+  smoke: smoke_c0_p1
+  priority: 3
+  purpose: "Control: the 100 original questions with prompt P1. Does permission to abstain cause abstention on answerable questions? (Day 4)"
+
+# C2, critical thinking: a needed fact removed, no correct answer (Day 4)
+smoke_c2_p0:
+  model: model_under_test
+  task: gsmplus_critical_seed100_p0
+  limit: 10
+  purpose: "Smoke test: 10 critical-thinking variants, prompt P0"
+smoke_c2_p1:
+  model: model_under_test
+  task: gsmplus_critical_seed100_p1
+  limit: 10
+  purpose: "Smoke test: 10 critical-thinking variants, prompt P1 (may answer UNANSWERABLE)"
+r3_c2_p0:
+  model: model_under_test
+  task: gsmplus_critical_seed100_p0
+  limit: null
+  smoke: smoke_c2_p0
+  priority: 1
+  purpose: "C2 with P0: 100 critical-thinking variants, no permission to abstain (Day 4)"
+r3_c2_p1:
+  model: model_under_test
+  task: gsmplus_critical_seed100_p1
+  limit: null
+  smoke: smoke_c2_p1
+  priority: 2
+  purpose: "C2 with P1: 100 critical-thinking variants, may answer UNANSWERABLE (Day 4)"
+
+# C1, distractor insertion: an irrelevant sentence added, same answer (Day 5)
+smoke_c1:
+  model: model_under_test
+  task: gsmplus_distractor_seed100
+  limit: 10
+  purpose: "Smoke test: 10 distractor-insertion variants, prompt P0"
+r2_c1:
+  model: model_under_test
+  task: gsmplus_distractor_seed100
+  limit: null
+  smoke: smoke_c1
+  priority: 4
+  purpose: "C1: 100 distractor-insertion variants of the same seeds, prompt P0 (Day 5)"

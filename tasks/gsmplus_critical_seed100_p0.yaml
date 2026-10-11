@@ -1,0 +1,35 @@
+# C2 with P0: GSM-Plus "critical thinking" variants of the same 100 seeds (a needed fact is
+# removed, so there is no correct number). Zero-shot, prompt P0 (no permission to abstain).
+# Each answer is classified by its final "####" line; the LLM judge (R4) later classifies the
+# free-text cases.
+task: gsmplus_critical_seed100_p0
+dataset_path: qintongli/GSM-Plus
+dataset_kwargs:
+  revision: 3b708db57b96a16e8e3368ed2956990c0809440e
+output_type: generate_until
+training_split: null
+fewshot_split: null
+test_split: test
+process_docs: !function gsmplus.process_docs_critical
+doc_to_text: !function utils.doc_to_text_p0
+doc_to_target: "{{answer}}"
+process_results: !function gsmplus.process_results_critical
+num_fewshot: 0
+generation_kwargs:
+  until: []
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 2048
+repeats: 1
+metric_list:
+  - metric: answered_number
+    aggregation: mean
+    higher_is_better: false
+  - metric: abstained
+    aggregation: mean
+    higher_is_better: true
+  - metric: no_final_answer
+    aggregation: mean
+    higher_is_better: false
+metadata:
+  version: 1.0

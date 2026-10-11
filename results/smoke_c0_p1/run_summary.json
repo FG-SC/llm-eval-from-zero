@@ -1,0 +1,300 @@
+{
+  "run": "smoke_c0_p1",
+  "purpose": "Smoke test: 10 original questions, prompt P1 (may answer UNANSWERABLE)",
+  "task": "gsm8k_seed100_p1",
+  "model": "openai/gpt-oss-20b",
+  "gen_kwargs": {
+    "reasoning_effort": "low"
+  },
+  "n_questions": 10,
+  "sample_ids_sha256": "8c19b33f7cbe156508dda9377b18b6d9d711026be50edff3c4d9aa57e4968d1e",
+  "finished_at": "2026-10-06T20:33:09+00:00",
+  "wall_seconds": 22.8,
+  "lm_eval_version": "0.4.13",
+  "metrics": {
+    "name": "gsm8k_seed100_p1",
+    "sample_len": 10,
+    "exact_match,strict-match": 0.9,
+    "exact_match_stderr,strict-match": 0.09999999999999999,
+    "exact_match,flexible-extract": 0.9,
+    "exact_match_stderr,flexible-extract": 0.09999999999999999
+  },
+  "extraction_rate": {
+    "strict-match": 1.0,
+    "flexible-extract": 1.0
+  },
+  "finish_reasons": {
+    "stop": 10
+  },
+  "unusable_answers": {
+    "count": 0,
+    "rate": 0.0,
+    "note": "finish_reason != stop: truncated, empty or no response"
+  },
+  "tokens_per_question": {
+    "prompt": {
+      "mean": 187.6,
+      "median": 175.0,
+      "max": 248,
+      "sum": 1876
+    },
+    "completion": {
+      "mean": 183.8,
+      "median": 169.5,
+      "max": 330,
+      "sum": 1838
+    },
+    "reasoning (inside completion)": {
+      "mean": 81.6,
+      "median": 67.0,
+      "max": 210,
+      "sum": 816
+    }
+  },
+  "answers_from_cache": 0,
+  "http_status_counts_this_run": {
+    "200": 10
+  },
+  "per_question": [
+    {
+      "doc_id": 0,
+      "orig_idx": 5,
+      "gold": "64",
+      "filters": {
+        "strict-match": {
+          "extracted": "64",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "64",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 176,
+      "completion_tokens": 330,
+      "reasoning_tokens": 210,
+      "from_cache": false
+    },
+    {
+      "doc_id": 1,
+      "orig_idx": 18,
+      "gold": "7",
+      "filters": {
+        "strict-match": {
+          "extracted": "7",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "7",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 151,
+      "completion_tokens": 135,
+      "reasoning_tokens": 47,
+      "from_cache": false
+    },
+    {
+      "doc_id": 2,
+      "orig_idx": 23,
+      "gold": "8",
+      "filters": {
+        "strict-match": {
+          "extracted": "8",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "8",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 160,
+      "completion_tokens": 118,
+      "reasoning_tokens": 37,
+      "from_cache": false
+    },
+    {
+      "doc_id": 3,
+      "orig_idx": 50,
+      "gold": "294",
+      "filters": {
+        "strict-match": {
+          "extracted": "294",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "294",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 158,
+      "completion_tokens": 147,
+      "reasoning_tokens": 58,
+      "from_cache": false
+    },
+    {
+      "doc_id": 4,
+      "orig_idx": 51,
+      "gold": "5",
+      "filters": {
+        "strict-match": {
+          "extracted": "5",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "5",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 172,
+      "completion_tokens": 165,
+      "reasoning_tokens": 70,
+      "from_cache": false
+    },
+    {
+      "doc_id": 5,
+      "orig_idx": 67,
+      "gold": "595",
+      "filters": {
+        "strict-match": {
+          "extracted": "595",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "595",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 174,
+      "completion_tokens": 86,
+      "reasoning_tokens": 36,
+      "from_cache": false
+    },
+    {
+      "doc_id": 6,
+      "orig_idx": 100,
+      "gold": "175",
+      "filters": {
+        "strict-match": {
+          "extracted": "175",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "175",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 215,
+      "completion_tokens": 216,
+      "reasoning_tokens": 92,
+      "from_cache": false
+    },
+    {
+      "doc_id": 7,
+      "orig_idx": 156,
+      "gold": "1400",
+      "filters": {
+        "strict-match": {
+          "extracted": "1400",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "1400",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 192,
+      "completion_tokens": 174,
+      "reasoning_tokens": 64,
+      "from_cache": false
+    },
+    {
+      "doc_id": 8,
+      "orig_idx": 165,
+      "gold": "77",
+      "filters": {
+        "strict-match": {
+          "extracted": "-23",
+          "scores": {
+            "exact_match": 0.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "-23",
+          "scores": {
+            "exact_match": 0.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 230,
+      "completion_tokens": 217,
+      "reasoning_tokens": 123,
+      "from_cache": false
+    },
+    {
+      "doc_id": 9,
+      "orig_idx": 183,
+      "gold": "2",
+      "filters": {
+        "strict-match": {
+          "extracted": "2",
+          "scores": {
+            "exact_match": 1.0
+          }
+        },
+        "flexible-extract": {
+          "extracted": "2",
+          "scores": {
+            "exact_match": 1.0
+          }
+        }
+      },
+      "finish_reason": "stop",
+      "prompt_tokens": 248,
+      "completion_tokens": 250,
+      "reasoning_tokens": 79,
+      "from_cache": false
+    }
+  ]
+}

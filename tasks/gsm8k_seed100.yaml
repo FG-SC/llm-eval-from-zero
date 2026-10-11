@@ -1,0 +1,47 @@
+# C0: the 100 sampled GSM8K test questions, zero-shot, prompt P0.
+# The scoring block (metric_list + filter_list) is copied verbatim from lm_eval's native
+# gsm8k task (version 3.0), so "strict-match" and "flexible-extract" mean exactly the same here.
+task: gsm8k_seed100
+dataset_path: openai/gsm8k
+dataset_name: main
+dataset_kwargs:
+  revision: 740312add88f781978c0658806c59bc2815b9866
+output_type: generate_until
+training_split: null
+fewshot_split: null
+test_split: test
+process_docs: !function utils.process_docs_seed100
+doc_to_text: !function utils.doc_to_text_p0
+doc_to_target: "{{answer}}"
+num_fewshot: 0
+generation_kwargs:
+  until: []
+  do_sample: false
+  temperature: 0.0
+  max_gen_toks: 2048
+repeats: 1
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: false
+    regexes_to_ignore:
+      - ","
+      - "\\$"
+      - "(?s).*#### "
+      - "\\.$"
+filter_list:
+  - name: "strict-match"
+    filter:
+      - function: "regex"
+        regex_pattern: "#### (\\-?[0-9\\.\\,]+)"
+      - function: "take_first"
+  - name: "flexible-extract"
+    filter:
+      - function: "regex"
+        group_select: -1
+        regex_pattern: "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+      - function: "take_first"
+metadata:
+  version: 1.0

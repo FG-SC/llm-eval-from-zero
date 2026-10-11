@@ -440,7 +440,8 @@ def platinum_story(summary: dict) -> str:
     lines += fixes
     if p["hidden_mistakes"]:
         lines.append(f"\n**A wrong answer key can also hide a model's mistake:** {_ids(p['hidden_mistakes'])} were "
-                     f"marked right only because the old key was wrong too.")
+                     f"marked right because the old key agreed with them; GSM8K-Platinum's corrected key says they "
+                     f"are wrong (the notes above show that not every correction is clear-cut).")
     agree = (f"all {ag['checked']} answers" if ag["agree"] == ag["checked"] else
              f"{ag['agree']} of the {ag['checked']} answers")
     consensus = (f" {_ids(ag['consensus'])} was kept without a review, because every model Platinum ran agreed with "
@@ -517,14 +518,14 @@ def abstention_table(summary: dict) -> pd.DataFrame:
 
 
 def abstention_story(summary: dict) -> str:
-    """The Day 4 result in words: a confident number without permission, abstention with it."""
+    """The Day 4 result in words: a number without permission, abstention with it."""
     p0, p1 = _run(summary, P0_RUN), _run(summary, P1_RUN)
     c = summary.get("comparisons", {}).get("c2_p0_to_p1")
     if not (p0 and p1 and c):
         return PENDING
     n, a, w = p0["n"], c["all"], c["without_flagged"]
     return (f"**Without permission (P0), {p0['rule_labels']['answered_number']['correct']} of {n} answers to questions "
-            f"that cannot be solved as written ended with a confident number.** With permission (P1), "
+            f"that cannot be solved as written still ended with a number.** With permission (P1), "
             f"{p1['rule_labels']['abstained']['correct']} wrote UNANSWERABLE and "
             f"{p1['rule_labels']['answered_number']['correct']} still gave a number. Question by question, "
             f"{a['after_only']} switched to abstaining and {a['before_only']} the other way (McNemar p "
@@ -549,6 +550,7 @@ def control_sentence(summary: dict) -> str:
         text += (f" Question by question, {a['before_only']} right answers became wrong and {a['after_only']} wrong "
                  f"answers became right (difference {_points(a['diff'])} points, 95% range {_points(lo)} to "
                  f"{_points(hi)}): {noise}.")
+        text += _artefacts_sentence(*_not_real_losses(summary, CONTROL_RUN), a["before_only"])
     return text
 
 
@@ -588,8 +590,12 @@ def disagreements_table(summary: dict) -> pd.DataFrame:
     rows = []
     for d in j.get("disagreements", []):
         q = next(x for x in summary["runs"][d["run"]]["per_question"] if x["orig_idx"] == d["idx"])
+        tail = q["answer_tail"]
+        if not tail and q.get("finish_reason") == "length":
+            limit = summary["runs"][d["run"]].get("card", {}).get("max_gen_toks")
+            tail = f"(cut off at the {limit:,}-token limit: no visible answer)" if limit else "(cut off: no visible answer)"
         rows.append((PROMPT_TEXT.get(d["run"], d["run"]), d["idx"], d["rule"].replace("_", " "),
-                     JUDGE_TEXT.get(d["judge"], d["judge"]).lower(), q["answer_tail"]))
+                     JUDGE_TEXT.get(d["judge"], d["judge"]).lower(), tail))
     return pd.DataFrame(rows or [("none", "", "", "", "")], columns=cols)
 
 
@@ -611,6 +617,33 @@ def _p(p: float) -> str:
     return "< 0.001" if p < 0.001 else f"= {p:.2f}"
 
 
+def _not_real_losses(summary: dict, run: str) -> tuple[list[int], list[int]]:
+    """Right-to-wrong flips (against the Day 2 run) that are grading artefacts from Day 3: the right number
+    written in another format (27.00), or the answer that GSM8K-Platinum's corrected key gives."""
+    base, after = _run(summary, EXAM), _run(summary, run)
+    if not (base and after and "per_question" in base and "per_question" in after):
+        return [], []
+    b = {q["orig_idx"]: q for q in after["per_question"]}
+    lost = [q["orig_idx"] for q in base["per_question"]
+            if q["strict_ok"] and q["orig_idx"] in b and not b[q["orig_idx"]]["strict_ok"]]
+    fmt = [i for i in lost if b[i].get("number_ok")]
+    corrected = {c["idx"]: c["platinum_key"]
+                 for c in ((summary.get("key_audit") or {}).get("platinum") or {}).get("key_changed", [])}
+    fixed = [i for i in lost if i in corrected and i not in fmt
+             and analyze._as_key_text(b[i]["strict"]) == analyze._as_key_text(corrected[i])]
+    return fmt, fixed
+
+
+def _artefacts_sentence(fmt: list[int], fixed: list[int], lost: int) -> str:
+    parts = []
+    if fmt:
+        parts.append(f"{_ids(fmt)} {'is' if len(fmt) == 1 else 'are'} the right number written differently "
+                     f"(like 27.00), which the strict rule rejects (Day 3)")
+    if fixed:
+        parts.append(f"on {_ids(fixed)} the new answer is the one GSM8K-Platinum's corrected key gives")
+    return f" Not all {lost} are real losses: {'; '.join(parts)}." if parts else ""
+
+
 def distractor_story(summary: dict) -> str:
     """The Day 5 result: the score with an extra sentence, compared question by question."""
     base, r, c = _run(summary, EXAM), _run(summary, DISTRACTOR_RUN), summary.get("comparisons", {}).get("c0_to_c1")
@@ -622,8 +655,10 @@ def distractor_story(summary: dict) -> str:
             f"originals.** Question by question: {a['before_only']} questions it got right before are now wrong, and "
             f"{a['after_only']} it got wrong before are now right (difference {_points(a['diff'])} points, bootstrap "
             f"95% range {_points(a['diff_ci95_bootstrap'][0])} to {_points(a['diff_ci95_bootstrap'][1])}; "
-            f"McNemar p {_p(a['mcnemar_p'])}). Leaving out the {len(c['excluded'])} questions flagged before the run or "
-            f"with a wrong answer key ({_ids(c['excluded'])}): {w['before_only']} lost, {w['after_only']} gained, "
+            f"McNemar p {_p(a['mcnemar_p'])})."
+            f"{_artefacts_sentence(*_not_real_losses(summary, DISTRACTOR_RUN), a['before_only'])}"
+            f" Leaving out the {len(c['excluded'])} questions flagged before the run or with an answer key that "
+            f"GSM8K-Platinum corrects ({_ids(c['excluded'])}): {w['before_only']} lost, {w['after_only']} gained, "
             f"difference {_points(w['diff'])} points.")
 
 
@@ -637,7 +672,7 @@ def retest_story(summary: dict) -> str:
     if not c:
         return PENDING
     return (f"**Asking the same {c['n']} original questions a second time, with nothing changed:** "
-            f"{_count(c['answer_changed']['correct'], 'final answer')} changed and "
+            f"the grader read a different final answer on {_count(c['answer_changed']['correct'], 'question')} and "
             f"{_count(c['grade_flipped']['correct'], 'grade')} flipped ({c['right_to_wrong']} from right to wrong, {c['wrong_to_right']} from wrong to right). "
             f"Part of any difference between two runs is just the model answering differently.")
 
@@ -735,7 +770,7 @@ def tldr(summary: dict) -> str:
     if a and a.get("platinum"):
         p = a["platinum"]
         parts.append(f"Day 3: of the {a['graded_wrong']} answers marked wrong, {a['counts']['model_error']} are clearly "
-                     f"the model's mistake; GSM8K-Platinum's corrected keys reveal {len(p['hidden_mistakes'])} more "
+                     f"the model's mistake; GSM8K-Platinum's corrected keys point to {len(p['hidden_mistakes'])} more likely mistakes "
                      f"among the answers marked right; with Platinum's questions and keys the same answers score "
                      f"{p['score']['correct']}/{p['score']['n']}.")
     runs, comps = summary["runs"], summary.get("comparisons", {})

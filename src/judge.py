@@ -6,6 +6,9 @@ runs at temperature 0. Every call goes through the groq-chat class: pacing, raw 
 that only keeps complete answers.
 
   python -m src.judge --run r3_c2_p0 --run r3_c2_p1 --name judge_r3   # how results/judge_r3 was made
+
+results/judge_smoke_c2 is the 10-question judge test run first; judge_r3 reused its cached answers for the
+first 20 judgments, so both logs are needed to replay the judge without calling the API.
 """
 import argparse
 import json

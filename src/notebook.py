@@ -63,7 +63,8 @@ def status(summary: dict, live: bool = False) -> str:
     """The setup cell's report, in words. It mentions the API key only when a live call is switched on."""
     from src.analyze import RUNS
 
-    done = [f"Day {RUNS[r]['day']} ({RUNS[r]['label'].lower()})" for r in summary["runs"]]
+    done = [f"Day {RUNS[r]['day']} ({RUNS[r]['label'].lower()})"
+            for r in sorted(summary["runs"], key=lambda r: RUNS[r]["day"])]
     finished = f"Finished experiments: {'; '.join(done)}." if done else "No experiment has finished yet."
     if live:
         found = "found" if os.environ.get("GROQ_API_KEY") else "NOT found: add it to .env"
@@ -111,12 +112,6 @@ def to_markdown(text: str) -> str:
             piece = piece.replace("\\$", "$").replace("$", "\\$").replace("<", "&lt;")
             parts.append(_LINE_HASH.sub(r"\1\\#", piece).replace("\n", "  \n"))
     return "".join(parts)
-
-
-def show_answer(text: str) -> None:
-    from IPython.display import Markdown, display
-
-    display(Markdown(to_markdown(text)))
 
 
 def say(markdown: str) -> None:

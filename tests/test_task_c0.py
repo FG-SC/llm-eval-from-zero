@@ -1,4 +1,4 @@
-"""The frozen sample and the C0 task (uses the GSM8K copy cached in .hf by `python -m src.sample`)."""
+"""The frozen sample and the C0 task (the task test downloads GSM8K into .hf on first run; internet needed once)."""
 import json
 
 from src.settings import ROOT, SAMPLE_FILE, prepare_environment

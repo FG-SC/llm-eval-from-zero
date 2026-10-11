@@ -1,7 +1,7 @@
 # C2 with P0: GSM-Plus "critical thinking" variants of the same 100 seeds (a needed fact is
 # removed, so there is no correct number). Zero-shot, prompt P0 (no permission to abstain).
-# Each answer is classified by its final "####" line; the LLM judge (R4) later classifies the
-# free-text cases.
+# Each answer is classified by its final "####" line; an LLM judge (src/judge.py, results/judge_r3)
+# also labels every answer, as a second check.
 task: gsmplus_critical_seed100_p0
 dataset_path: qintongli/GSM-Plus
 dataset_kwargs:

@@ -73,7 +73,8 @@ WORDS = {
                               "totals."),
         ("McNemar test", "a test for paired yes/no results: it looks only at the questions whose result changed."),
         ("Bootstrap range", "a range for the difference found by redrawing the questions at random many times."),
-        ("Noise floor", "how much two runs differ when nothing was changed: the smallest difference you can trust."),
+        ("Noise floor", "how much two runs differ when nothing was changed. A smaller difference means nothing; a "
+                        "bigger one still has to beat the luck of which questions were drawn (the paired 95% range)."),
     ]),
     "4": ("New words today", [
         ("GSM-Plus", "a published set of variants of GSM8K questions (Li et al., 2024), made by changing the "

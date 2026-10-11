@@ -6,7 +6,8 @@
 
 Writes results/<run>/: results.json, samples_<task>.jsonl, raw_requests.jsonl, run_summary.json.
 Complete answers are cached per model in cache/<model>/responses.sqlite, so re-running costs nothing
-except answers that were truncated or failed (those are asked again).
+except answers that were truncated or failed (those are asked again). The cache is not in the repo: on a
+fresh clone, run `python -m src.response_cache --rebuild` first to refill it from the saved request logs.
 Exit codes: 0 ok, 2 refused by the quota guard, 3 daily quota hit (resume later).
 """
 import argparse
@@ -43,20 +44,28 @@ def _signature(max_tokens, temperature, stop, reasoning_effort) -> tuple:
     return (max_tokens, float(temperature or 0), tuple(stop or ()), reasoning_effort)
 
 
-def raw_index(model_id: str) -> dict:
-    """(prompt_hash, generation signature) -> latest successful raw record, across all runs.
+def _log_records(model_id: str, run: str) -> list[dict]:
+    log = RESULTS_DIR / run / "raw_requests.jsonl"
+    if not log.exists():
+        return []
+    records = [json.loads(line) for line in log.read_text(encoding="utf-8").splitlines()]
+    return [r for r in records if r.get("model") == model_id and r.get("status") == 200]
+
+
+def raw_index(model_id: str, run: str | None = None) -> dict:
+    """(prompt_hash, generation signature) -> latest successful raw record.
 
     Answers served from the cache were requested by an earlier run, so their usage and
-    finish_reason live in that run's raw log.
+    finish_reason live in that run's raw log. Only runs that fill the cache count (not a
+    cache: false run such as the Day 5 retest, nor ad-hoc calls such as results/live_demo);
+    the run's own log, if given, wins.
     """
-    records = []
-    for log in RESULTS_DIR.glob("*/raw_requests.jsonl"):
-        for line in log.read_text(encoding="utf-8").splitlines():
-            rec = json.loads(line)
-            if rec.get("model") == model_id and rec.get("status") == 200:
-                records.append(rec)
+    runs = load_yaml(CONFIG_DIR / "runs.yaml")
+    others = [r for name, cfg in runs.items() if cfg.get("cache", True) and name != run
+              for r in _log_records(model_id, name)]
+    own = _log_records(model_id, run) if run else []
     index = {}
-    for rec in sorted(records, key=lambda r: r["ts"]):  # later answers win
+    for rec in sorted(others, key=lambda r: r["ts"]) + sorted(own, key=lambda r: r["ts"]):  # later answers win
         req = rec["request"]
         sig = _signature(req.get("max_tokens"), req.get("temperature"), req.get("stop"), req.get("reasoning_effort"))
         index[(rec["prompt_hash"], sig)] = rec
@@ -64,18 +73,27 @@ def raw_index(model_id: str) -> dict:
 
 
 def cached_answers(model_id: str, task: str, gen: dict) -> int:
-    """How many questions of this task already have a complete answer for these settings."""
-    from src.response_cache import usable
+    """How many questions of this task already have a complete answer for these settings in the local
+    answer cache (cache/<model>/responses.sqlite: not in the repo, so 0 on a fresh clone until
+    `python -m src.response_cache --rebuild` refills it)."""
+    from src.response_cache import ResponseCache, cache_key, cache_path
 
+    path = cache_path(ROOT, model_id)
+    if not path.exists():
+        return 0
     sig = _signature(gen.get("max_gen_toks"), gen.get("temperature"), gen.get("until"), gen.get("reasoning_effort"))
     index = raw_index(model_id)
+    cache = ResponseCache(path)
     hashes = set()
-    for path in RESULTS_DIR.glob(f"*/samples_{task}.jsonl"):
-        for line in path.read_text(encoding="utf-8").splitlines():
-            ph = json.loads(line)["prompt_hash"]
-            rec = index.get((ph, sig))
-            if rec and usable(rec.get("response")):
-                hashes.add(ph)
+    try:
+        for samples in RESULTS_DIR.glob(f"*/samples_{task}.jsonl"):
+            for line in samples.read_text(encoding="utf-8").splitlines():
+                ph = json.loads(line)["prompt_hash"]
+                rec = index.get((ph, sig))
+                if rec and cache.get(cache_key(ph, rec["request"])) is not None:
+                    hashes.add(ph)
+    finally:
+        cache.close()
     return len(hashes)
 
 
@@ -95,7 +113,7 @@ def sample_signature(sample: dict) -> tuple:
 
 def summarize(run_name, run_cfg, model_cfg, results, samples, raw_path, sample_sha, wall_s, session) -> dict:
     task = run_cfg["task"]
-    index = raw_index(model_cfg["id"])
+    index = raw_index(model_cfg["id"], run_name)
     statuses = Counter()
     requested_here = set()  # prompts sent to the API by THIS invocation (the log is append-only)
     if raw_path.exists():

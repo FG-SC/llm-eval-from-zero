@@ -17,13 +17,6 @@ def _platinum():
     return {it["idx"]: it for it in json.loads((DATA_DIR / "platinum_check.json").read_text(encoding="utf-8"))["items"]}
 
 
-def _number(text):
-    try:
-        return float(str(text).replace(",", "").replace("$", "").rstrip("."))
-    except ValueError:
-        return None
-
-
 def test_grading_demo_matches_the_notebook_text():
     rows = {r["Answer ends with"]: (r["Strict rule"], r["Flexible rule"]) for _, r in tables.grading_demo().iterrows()}
     assert rows["#### 64"] == ("reads 64 → right", "reads 64 → right")

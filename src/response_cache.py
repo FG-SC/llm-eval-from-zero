@@ -62,11 +62,26 @@ def cache_path(root: Path, model_id: str) -> Path:
     return root / "cache" / model_id.replace("/", "__") / "responses.sqlite"
 
 
+def _skipped_logs(root: Path) -> set[str]:
+    """Logs that must not refill the cache: runs with cache: false (the Day 5 retest asked the same questions
+    again on purpose; its answers would replace the Day 2 ones) and the notebook's one-off live demo."""
+    runs_file = root / "configs" / "runs.yaml"
+    if not runs_file.exists():
+        return {"live_demo"}
+    import yaml
+
+    runs = yaml.safe_load(runs_file.read_text(encoding="utf-8")) or {}
+    return {name for name, cfg in runs.items() if cfg.get("cache", True) is False} | {"live_demo"}
+
+
 def rebuild(root: Path) -> dict:
     """Refill each model's cache from the raw request logs (successful, complete answers only)."""
     counts: dict[str, int] = {}
     caches: dict[str, ResponseCache] = {}
+    skip = _skipped_logs(root)
     for log in sorted((root / "results").glob("*/raw_requests.jsonl")):
+        if log.parent.name in skip:
+            continue
         for line in log.read_text(encoding="utf-8").splitlines():
             rec = json.loads(line)
             if rec.get("status") != 200 or not rec.get("prompt_hash"):

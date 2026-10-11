@@ -13,7 +13,8 @@ __pycache__/
 # the author's local working files
 recon/
 
-# outputs of optional live runs (the notebook's RUN_LIVE / LIVE_DEMO switches and the plain CLI example)
+# outputs of optional live calls (the notebook's LIVE_DEMO switch and the plain CLI example; RUN_LIVE
+# rewrites the tracked results/r1_c0 and results/summary.json on purpose)
 results/live_demo/
 results/plain_cli/
 

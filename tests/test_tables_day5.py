@@ -14,7 +14,7 @@ def pair(before, after, diff, n=100):
 SUMMARY = {"runs": {"r1_c0": {"scores": {"strict-match": score(91, 100)}},
                     "r2_c1": {"scores": {"strict-match": score(88, 100)}}},
            "comparisons": {
-               "c0_to_c1": {"all": pair(6, 3, -0.03), "without_flagged": pair(5, 3, -0.02, 94), "excluded": [980, 981]},
+               "c0_to_c1": {"all": pair(6, 3, -0.03), "without_flagged": pair(5, 3, -0.02, 98), "excluded": [980, 981]},
                "c0_retest": {"n": 100, "answer_changed": score(7, 100), "grade_flipped": score(4, 100),
                              "right_to_wrong": 3, "wrong_to_right": 1}}}
 
@@ -36,7 +36,7 @@ def test_distractor_story_uses_the_comparison():
 
 def test_retest_story_and_flips_table():
     text = tables.retest_story(SUMMARY)
-    assert "7 final answers changed and 4 grades flipped (3 from right to wrong, 1 from wrong to right)" in text
+    assert "different final answer on 7 questions and 4 grades flipped (3 from right to wrong, 1 from wrong to right)" in text
     t = tables.flips_table(SUMMARY)
     assert list(t["Right → wrong"]) == [6, 3] and list(t["Wrong → right"]) == [3, 1]
     assert list(t["Net change in the score"]) == ["-3.0 points", "-2.0 points"]

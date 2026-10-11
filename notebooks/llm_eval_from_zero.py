@@ -473,7 +473,8 @@ say(tables.judge_agreement(summary))
 show_table(tables.rule_vs_judge_table(summary))
 
 # %% [markdown]
-# The answers where they differ, with the end of each answer as the judge saw it. Read them and decide who is
+# The answers where they differ, with the last lines of each answer (the judge read a little more: up to the last
+# 700 characters). Read them and decide who is
 # right (some are borderline: an answer can say "I cannot determine this" and still end with a number):
 
 # %%
@@ -489,8 +490,8 @@ show_table(tables.disagreements_table(summary))
 #
 # **What we're doing.** Two checks, on the same 100 questions. First, GSM-Plus has a version of each question
 # with one irrelevant sentence added, with numbers in it: does the score survive? Second, we ask the original
-# questions again with nothing changed, to learn how much the answers move on their own. A difference only
-# means something if it is bigger than that.
+# questions again with nothing changed, to learn how much the answers move on their own. A difference must at
+# least be bigger than that; we will see that this alone is not enough.
 
 # %%
 say(new_words("5"))

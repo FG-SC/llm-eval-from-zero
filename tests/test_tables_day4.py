@@ -15,7 +15,7 @@ SUMMARY = {
                           "per_question": [{"orig_idx": 4, "answer_tail": "cannot say, so\n#### 5"}]},
              "r3_c2_p1": {"n": 100, "rule_labels": rule(14, 86, 0), "per_question": []}},
     "comparisons": {"c2_p0_to_p1": {"all": {"n": 100, "before_only": 0, "after_only": 86, "mcnemar_p": 1e-20},
-                                    "without_flagged": {"n": 97, "rate_after": 86 / 97}, "excluded": [3, 9]}},
+                                    "without_flagged": {"n": 98, "rate_after": 86 / 98}, "excluded": [3, 9]}},
     "judge_results": {"runs": {
         "r3_c2_p0": {"rule_vs_judge": {"answered_number -> ANSWERED_NUMBER": 96, "answered_number -> ABSTAINED": 1,
                                        "no_final_answer -> OTHER": 3}},
@@ -37,7 +37,7 @@ def test_story_numbers_come_from_the_rule_counts():
     text = tables.abstention_story(SUMMARY)
     assert "97 of 100 answers" in text and "86 wrote UNANSWERABLE and 14 still gave a number" in text
     assert "86 switched to abstaining and 0 the other way" in text
-    assert "#3 and #9" in text and "abstained on 88.7%" in text
+    assert "#3 and #9" in text and "abstained on 87.8%" in text
 
 
 def test_tables_have_one_row_per_prompt_and_pair():

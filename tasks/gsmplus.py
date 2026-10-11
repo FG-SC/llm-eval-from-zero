@@ -44,7 +44,7 @@ def process_docs_critical(dataset):
 
 
 def classify_final_line(text: str | None) -> str:
-    """'answered_number', 'abstained' (#### UNANSWERABLE) or 'no_final_answer' (no #### line)."""
+    """'answered_number', 'abstained' (#### UNANSWERABLE) or 'no_final_answer' (no '####' followed by a number or UNANSWERABLE)."""
     found = FINAL_LINE.findall(text or "")
     if not found:
         return "no_final_answer"

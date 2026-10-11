@@ -11,7 +11,8 @@ P0_TEMPLATE = (
     "On the last line, write the final answer as: #### <number>\n\n"
     "Problem: {question}"
 )
-# P1 (critical-thinking condition only): P0 plus explicit permission not to answer.
+# P1: P0 plus explicit permission not to answer (the missing-fact runs and their control on the original
+# questions).
 P1_TEMPLATE = (
     "Solve the following math problem. Think step by step.\n"
     "On the last line, write the final answer as: #### <number>\n"

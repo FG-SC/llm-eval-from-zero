@@ -252,7 +252,8 @@ def fig_flips(summary: dict) -> go.Figure:
                      zeroline=True, zerolinecolor=INK, zerolinewidth=1.5)
     c1 = summary["comparisons"]["c0_to_c1"]["all"]
     noise = summary["comparisons"].get("c0_to_retest", {}).get("all")
-    title = f"One irrelevant sentence turned {c1['before_only']} right answers wrong and {c1['after_only']} wrong ones right"
+    title = (f"One irrelevant sentence flipped {c1['before_only']} grades from right to wrong and {c1['after_only']} "
+             f"from wrong to right")
     if noise:
         moved = noise["before_only"] + noise["after_only"]
         title += f"; asking again moved {moved} grade{'' if moved == 1 else 's'}"

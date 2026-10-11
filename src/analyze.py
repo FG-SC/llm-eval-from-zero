@@ -1,6 +1,7 @@
 """Collect every finished run into results/summary.json: the single source of the numbers used
 by the notebook, its charts (src/figures.py) and tables (src/tables.py). Reads the harness's sample logs, the raw request logs
-and the hand-made data files (data/key_audit.json, data/platinum_check.json) directly.
+and the data files data/key_audit.json (the AI readers' verdicts) and data/platinum_check.json (written by
+src/platinum_check.py) directly.
 
   python -m src.analyze
 """
@@ -17,15 +18,15 @@ from src.settings import CONFIG_DIR, DATA_DIR, RESULTS_DIR, SAMPLE_FILE, load_ya
 SUMMARY_FILE = RESULTS_DIR / "summary.json"
 
 # Which run feeds which day of the notebook (smoke runs are checks, never results).
-RUNS = {
+RUNS = {  # in the order of the days
     "r1_c0": {"condition": "C0", "label": "Original questions", "prompt": "P0", "kind": "numeric", "day": 2},
-    "r1_c0_retest": {"condition": "C0", "label": "Original questions, asked again", "prompt": "P0",
-                     "kind": "numeric", "day": 5, "retest_of": "r1_c0"},
     "r1_c0_p1": {"condition": "C0", "label": "Original questions, may say UNANSWERABLE", "prompt": "P1",
                  "kind": "numeric", "day": 4},
     "r3_c2_p0": {"condition": "C2", "label": "Missing fact", "prompt": "P0", "kind": "abstention", "day": 4},
     "r3_c2_p1": {"condition": "C2", "label": "Missing fact, may say UNANSWERABLE", "prompt": "P1",
                  "kind": "abstention", "day": 4},
+    "r1_c0_retest": {"condition": "C0", "label": "Original questions, asked again", "prompt": "P0",
+                     "kind": "numeric", "day": 5, "retest_of": "r1_c0"},
     "r2_c1": {"condition": "C1", "label": "Extra irrelevant sentence", "prompt": "P0", "kind": "numeric", "day": 5},
 }
 RETEST_RUNS = {name for name, meta in RUNS.items() if meta.get("retest_of")}
@@ -111,9 +112,11 @@ def _raw_records(model_id: str, runs) -> list[dict]:
 
 
 def _index(model_id: str, run: str) -> dict:
-    """(prompt_hash, signature) -> raw record; the run's own requests win, then other (non-retest) runs."""
+    """(prompt_hash, signature) -> raw record; the run's own requests win, then the other evaluation runs of
+    configs/runs.yaml (never the retest, nor ad-hoc logs such as results/live_demo)."""
+    evaluation_runs = load_yaml(CONFIG_DIR / "runs.yaml")
     others = [p.parent.name for p in RESULTS_DIR.glob("*/raw_requests.jsonl")
-              if p.parent.name != run and p.parent.name not in RETEST_RUNS]
+              if p.parent.name in evaluation_runs and p.parent.name != run and p.parent.name not in RETEST_RUNS]
     index = {}
     for rec in _raw_records(model_id, others) + _raw_records(model_id, [run]):
         req = rec["request"]
@@ -443,6 +446,7 @@ def build() -> dict:
         out["key_audit"] = key_audit(runs["r1_c0"])
         runs["r1_c0"]["examples"] += _key_error_example(runs["r1_c0"], out["key_audit"])
     key_errors = {i["idx"] for i in (out.get("key_audit") or {}).get("items", []) if i["verdict"] == "key_error"}
+    key_errors |= {c["idx"] for c in ((out.get("key_audit") or {}).get("platinum") or {}).get("key_changed", [])}
     di_flags = {f["idx"] for f in sample_file["flagged"] if f["variant"] == "distraction insertion"}
     ct_flags = {f["idx"] for f in sample_file["flagged"] if f["variant"] == "critical thinking"}
     if "r1_c0" in runs and "r2_c1" in runs:

@@ -1,5 +1,5 @@
 {
-  "description": "Post-hoc reading of the 9 answers the grader marked wrong in run r1_c0 (GSM8K, zero-shot). Done after the run; it does not change the official, pre-registered score.",
+  "description": "Post-hoc reading of the 9 answers the grader marked wrong in run r1_c0 (GSM8K, zero-shot). Done after the run; it does not change the official score, whose grading rule was fixed in the task file before the run.",
   "run": "r1_c0",
   "date": "2026-10-06",
   "readers": "4 AI readers: Claude (the AI assistant that ran the experiment) and 3 more Claude sessions that did not see each other's verdicts. Their instructions and raw verdicts are in data/key_audit_readers.json. Not a human audit: read the questions yourself. Each item is also compared with GSM8K-Platinum (data/platinum_check.json), where people reviewed the questions its models got wrong.",
